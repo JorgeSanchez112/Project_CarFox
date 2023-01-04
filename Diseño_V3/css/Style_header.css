@@ -1,0 +1,120 @@
+/*Header*/
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+.caja_menuAd1{
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    width: 100%;
+    background-color: #f3f5f9;
+}
+body{
+    background-color: #f3f5f9;
+}
+header{
+    display: inline-flex;
+    width: 100%;
+}
+
+/* Codigo Barra de usuario */
+.nav__user{
+    display: flex;
+    align-items: center;
+    color: #717171;
+    background-color: white;
+    width: 100%;
+    height: 8vh;
+    border-bottom: 1px solid #e0e4e8;
+    padding-left: 15px;
+}
+.nav__user h2{
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+/* Codigo menu lateral*/
+.menu-left{
+    width: 14%;
+}
+.section__aside-mobile{
+    justify-content: center;
+    display: flex;
+
+    width: 100%;
+    height: 8vh;
+    align-items: center;
+    background-color: #4b4276;
+}
+.nav__checkbox{
+    display: none;
+}
+.section__aside{
+    display: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    background-color: #4b4276;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    border-bottom: 1px solid gray;
+}
+.section__aside .icons{
+    display: flex;
+    justify-content: space-between;
+}
+.section__aside .icons h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 4rem;
+    color: white;
+    width: 100%;
+}
+.nav__toggle{
+    display: flex;
+    justify-content: center;
+}
+svg{
+    width: 80%;
+    fill: white;
+}
+.lista{
+    margin-top: 80px;
+}
+.lista li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 50px;
+    border-bottom: 2px solid grey;
+}
+.lista li a{
+    text-decoration: none;
+    color: white;
+    font-size: 2.6rem;
+    cursor: pointer;
+}
+.lista li a i{
+    margin-right: 10px;
+}
+.nav__checkbox:checked + .section__aside-mobile{
+    display: none;
+}
+.nav__checkbox:checked ~ .section__aside{
+    display: inline-flex;
+}
