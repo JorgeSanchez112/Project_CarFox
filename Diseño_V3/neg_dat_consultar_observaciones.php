@@ -42,11 +42,11 @@
                     <td data-label="Generar salida">
                         <button>Salida</button>
                     </td>
-                    <td data-label="Eliminar">
-                        <button>Eliminar</button>
-                    </td>
                     <td data-label="Actualizar">
                         <button>Actualizar</button>
+                    </td>
+                    <td data-label="Eliminar">
+                        <button>Eliminar</button>
                     </td>
                 </tr>
                 <tr>
@@ -64,11 +64,11 @@
                     <td data-label="Generar salida">
                         <button>Salida</button>
                     </td>
-                    <td data-label="Eliminar">
-                        <button>Eliminar</button>
-                    </td>
                     <td data-label="Actualizar">
                         <button>Actualizar</button>
+                    </td>
+                    <td data-label="Eliminar">
+                        <button>Eliminar</button>
                     </td>
                 </tr>
                 <tr>
@@ -86,11 +86,11 @@
                     <td data-label="Generar salida">
                         <button>Salida</button>
                     </td>
-                    <td data-label="Eliminar">
-                        <button>Eliminar</button>
-                    </td>
                     <td data-label="Actualizar">
                         <button>Actualizar</button>
+                    </td>
+                    <td data-label="Eliminar">
+                        <button>Eliminar</button>
                     </td>
                 </tr>
             </tbody>
