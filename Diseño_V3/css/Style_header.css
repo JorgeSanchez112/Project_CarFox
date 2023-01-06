@@ -80,16 +80,22 @@ header{
     justify-content: center;
     align-items: center;
 
-    font-size: 4rem;
+    font-size: 3rem;
     color: white;
     width: 100%;
+}
+.icons label {
+    text-align: center;
 }
 .nav__toggle{
     display: flex;
     justify-content: center;
+
+    width: 100%;
+    height: 100%;
 }
 svg{
-    width: 80%;
+    width: 60%;
     fill: white;
 }
 .lista{
@@ -106,7 +112,7 @@ svg{
 .lista li a{
     text-decoration: none;
     color: white;
-    font-size: 2.6rem;
+    font-size: 2rem;
     cursor: pointer;
 }
 .lista li a i{

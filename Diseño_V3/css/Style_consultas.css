@@ -64,6 +64,27 @@
 .table tbody td:hover{
     background-color: #b89cc0;
 }
+.btn_table{
+    background-color: #8e8590;
+    padding: 9px 20px;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: 0;
+    cursor: pointer;
+}
+button:disabled {
+    background: blue;
+}
+.btn_bottom{
+    display: flex;
+    justify-content: center;
+
+    font-size: 1.4rem;
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: #8e8590;
+    color: white;
+}
 
 @media screen and (min-width:1000px) {
     .table{

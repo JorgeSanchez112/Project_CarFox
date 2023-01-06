@@ -22,8 +22,8 @@
                     <th>Fecha salida</th>
                     <th>Imagenes</th>
                     <th>Generar salida</th>
-                    <th>Eliminar</th>
                     <th>Actualizar</th>
+                    <th>Eliminar</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,13 +40,13 @@
                         </figure>
                     </td>
                     <td data-label="Generar salida">
-                        <button>Salida</button>
+                        <button class="btn_table fa-solid fa-right-to-bracket"></button>
                     </td>
                     <td data-label="Actualizar">
-                        <button>Actualizar</button>
+                        <button class="btn_table fa-solid fa-pen-to-square"></button>
                     </td>
                     <td data-label="Eliminar">
-                        <button>Eliminar</button>
+                        <button class="btn_table fa-solid fa-trash"></button>
                     </td>
                 </tr>
                 <tr>
@@ -95,6 +95,7 @@
                 </tr>
             </tbody>
         </table>
+        <a class="btn_bottom" href="pres_registro_observaciones.php">Nueva observación</a>
     </main>
 </body>
 </html>
