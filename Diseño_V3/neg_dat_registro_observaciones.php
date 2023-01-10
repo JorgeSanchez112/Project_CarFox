@@ -10,7 +10,7 @@
 <body>
     <?php include('header_administrador.php'); ?>
     <main>
-        <section class="container">
+        <section class="container__mensaje-exitoso">
             <article class="article__title-color">
                 <p>¡Registro observaciones exitoso</p>
             </article>

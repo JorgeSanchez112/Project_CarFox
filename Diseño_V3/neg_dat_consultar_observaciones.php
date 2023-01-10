@@ -9,11 +9,11 @@
 </head>
 <body>
     <?php include('header_administrador.php'); ?>
-    <main class="container">
+    <main class="container-table">
         <table class="table">
             <caption>Observaciones</caption>
-            <thead>
-                <tr>
+            <tbody>
+                <tr class="table-header">
                     <th>Placa</th>
                     <th>Descripcion</th>
                     <th>Cod repuesto</th>
@@ -25,8 +25,6 @@
                     <th>Actualizar</th>
                     <th>Eliminar</th>
                 </tr>
-            </thead>
-            <tbody>
                 <tr>
                     <td data-label="Placa">DTE312</td>
                     <td data-label="Descripcion">Al automovil se le realizo un cambio de bateria con herramientas mecanicas</td>

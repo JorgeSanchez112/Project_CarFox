@@ -2,6 +2,8 @@
 <html lang="es">
     <head>
         <link rel="stylesheet" href="css/Style_header.css">
+        <link media="(min-width:1000px)" rel="stylesheet" href="css/Style_desktop.css">
+        <link media="(min-width:465px)" rel="stylesheet" href="css/Style_tablet.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/> 
     </head>
     <body>
@@ -27,7 +29,7 @@
                     </article>
 
                     <ul class="lista">
-                        <li><a href="contenedor.php"><i class="fas fa-home"></i>Inicio</a></li>
+                        <li><a href="dashboard_administrador.php"><i class="fas fa-home"></i>Inicio</a></li>
                         <li><a href="neg_dat_consultar.php"><i class="fas fa-user"></i>Empleados</a></li>
                         <li><a href="neg_dat_consultar_propietarios.php"><i class="fa-solid fa-key"></i> Propietarios</a></li>
                         <li><a href="neg_dat_consultar_vehiculo.php"><i class="fa-solid fa-car"></i> Vehiculos</a></li>
