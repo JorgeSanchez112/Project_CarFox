@@ -16,17 +16,18 @@
             <article class="article__container-form">
                 <form method="POST" action="neg_dat_registro_observaciones.php" enctype="multipart/form-data">
                     <label for="placa">Placa</label>
-                    <input type="text" id="placa" placeholder="Ingresar placa del vehiculo" required>
+                    <input type="text" id="placa" name="placa" placeholder="Ingresar placa del vehiculo" required>
                     <label for="des_reparacion">Descripcion de reparacion</label>
-                    <input type="text" id="des_reparacion" placeholder="Ingresar descripcion de reparacion" required>
+                    <input type="text" id="des_reparacion" name="descripcion_reparacion" placeholder="Ingresar descripcion de reparacion" required>
                     <label for="cod_repuesto">Codigo de repuesto</label>
-                    <input type="text" id="cod_repuesto" placeholder="Ingresar codigo de repuesto usado" required>
+                    <input type="text" id="cod_repuesto" name="cod_repuesto" placeholder="Ingresar codigo de repuesto usado" required>
+                    <input type="hidden" name="documento" placeholder="ingrese el documento" required>
                     <label for="fecha_entrada">Fecha de entrada del vehiculo</label>
-                    <input type="datetime-local" id="fecha_entrada" required>
+                    <input type="datetime-local" name="fecha_entrada" id="fecha_entrada" required>
                     <label for="fecha_salida">Fecha de salida del vehiculo</label>
-                    <input type="datetime-local" id="fecha_salida" required>
+                    <input type="datetime-local" name="fecha_salida" id="fecha_salida" required>
                     <label for="foto_vehiculo">Foto del vehiculo</label>
-                    <input type="file" id="foto_vehiculo" required>
+                    <input type="file" name="file" id="foto_vehiculo" required>
                     <input class="input__btn-color" type="submit">
                 </form>
             </article>
