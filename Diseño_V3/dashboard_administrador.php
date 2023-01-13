@@ -28,7 +28,7 @@
                 </figure>
                 <div>
                     <p>Repuesto</p>
-                    <a href="">Registrar repuesto</a>
+                    <a href="pres_registro_repuestos.php">Registrar repuesto</a>
                 </div>
             </article>
             <article class="box box-2">
@@ -41,7 +41,7 @@
                 </figure>
                 <div>
                     <p>Propietario</p>
-                    <a href="">Registrar propietario</a>
+                    <a href="pres_registro_propietarios.php">Registrar propietario</a>
                 </div>
             </article>
             <article class="box box-3">
@@ -54,7 +54,7 @@
                 </figure>
                 <div>
                     <p>Vehiculo</p>
-                    <a href="">Registrar vehiculo</a>
+                    <a href="pres_registro_vehiculo.php">Registrar vehiculo</a>
                 </div>
             </article>
             <article class="box box-4">
@@ -67,7 +67,7 @@
                 </figure>
                 <div>
                     <p>Empleado</p>
-                    <a href="">Registrar empleado</a>
+                    <a href="pres_registro.php">Registrar empleado</a>
                 </div>
             </article>
             <article class="box box-5">
@@ -80,7 +80,7 @@
                 </figure>
                 <div>
                     <p>Observacion</p>
-                    <a href="">Registrar observacion</a>
+                    <a href="pres_registo_observaciones.php">Registrar observacion</a>
                 </div>
             </article>
             <article class="box box-6">
@@ -93,7 +93,7 @@
                 </figure>
                 <div>
                     <p>Historial</p>
-                    <a href="">Registrar historial</a>
+                    <a href="pres_registro_historial.php">Registrar historial</a>
                 </div>
             </article>
         </section>

@@ -8,91 +8,83 @@
     <link rel="stylesheet" href="css/Style_consultas.css">
 </head>
 <body>
-    <?php include('header_administrador.php'); ?>
+<?php include('header_administrador.php');?>
     <main class="container-table">
-        <table class="table">
-            <caption>Observaciones</caption>
-            <tbody>
-                <tr class="table-header">
-                    <th>Placa</th>
-                    <th>Descripcion</th>
-                    <th>Cod repuesto</th>
-                    <th>Mecanico</th>
-                    <th>Fecha entrada</th>
-                    <th>Fecha salida</th>
-                    <th>Imagenes</th>
-                    <th>Generar salida</th>
-                    <th>Actualizar</th>
-                    <th>Eliminar</th>
-                </tr>
-                <tr>
-                    <td data-label="Placa">DTE312</td>
-                    <td data-label="Descripcion">Al automovil se le realizo un cambio de bateria con herramientas mecanicas</td>
-                    <td data-label="Cod repuesto">B-300</td>
-                    <td data-label="Mecanico">1067219831</td>
-                    <td data-label="Fecha entrada">2019-03-11 10:29:20</td>
-                    <td data-label="Fecha salida">2019-03-12 10:30:01</td>
-                    <td data-label="Imagenes">
-                        <figure>
-                            <img src="img/small/img_auto2_small.png" alt="auto2">
-                        </figure>
-                    </td>
-                    <td data-label="Generar salida">
-                        <button class="btn_table fa-solid fa-right-to-bracket"></button>
-                    </td>
-                    <td data-label="Actualizar">
-                        <button class="btn_table fa-solid fa-pen-to-square"></button>
-                    </td>
-                    <td data-label="Eliminar">
-                        <button class="btn_table fa-solid fa-trash"></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-label="Placa">DTE312</td>
-                    <td data-label="Descripcion">Al automovil se le realizo un cambio de bateria con herramientas mecanicas</td>
-                    <td data-label="Cod repuesto">B-300</td>
-                    <td data-label="Mecanico">1067219831</td>
-                    <td data-label="Fecha entrada">2019-03-11 10:29:20</td>
-                    <td data-label="Fecha salida">2019-03-12 10:30:01</td>
-                    <td data-label="Imagenes">
-                        <figure>
-                            <img src="img/small/img_auto1_small.jpg" alt="auto2">
-                        </figure>
-                    </td>
-                    <td data-label="Generar salida">
-                        <button>Salida</button>
-                    </td>
-                    <td data-label="Actualizar">
-                        <button>Actualizar</button>
-                    </td>
-                    <td data-label="Eliminar">
-                        <button>Eliminar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-label="Placa">DTE312</td>
-                    <td data-label="Descripcion">Al automovil se le realizo un cambio de bateria con herramientas mecanicas</td>
-                    <td data-label="Cod repuesto">B-300</td>
-                    <td data-label="Mecanico">1067219831</td>
-                    <td data-label="Fecha entrada">2019-03-11 10:29:20</td>
-                    <td data-label="Fecha salida">2019-03-12 10:30:01</td>
-                    <td data-label="Imagenes">
-                        <figure>
-                            <img src="img/small/img_auto2_small.png" alt="auto2">
-                        </figure>
-                    </td>
-                    <td data-label="Generar salida">
-                        <button>Salida</button>
-                    </td>
-                    <td data-label="Actualizar">
-                        <button>Actualizar</button>
-                    </td>
-                    <td data-label="Eliminar">
-                        <button>Eliminar</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    
+    <?php class Observaciones
+    {
+
+        public function consultar ()
+        {
+        include ("conexion.php");
+        echo "<table class='table'>";
+
+        $sql = "SELECT * FROM observaciones";
+	    if(!$result = $db->query($sql)):
+		    die('Hay un error primera consulta!!! ['.$db->error.']');
+        endif;
+        echo "<caption>Observaciones</caption>";
+        echo "<tbody>";
+            echo "<tr class='table-header'>";
+                echo "<th>Placa</th>";
+                echo "<th>Descripcion</th>";
+                echo "<th>Cod repuesto</th>";
+                echo "<th>Mecanico</th>";
+                echo "<th>Fecha entrada</th>";
+                echo "<th>Fecha salida</th>";
+                echo "<th>Imagenes</th>";
+                echo "<th>Generar salida</th>";
+                echo "<th>Actualizar</th>";
+                echo "<th>Eliminar</th>";
+            echo "</tr>";
+        while ($row=$result->fetch_assoc()):
+            $id_observaciones=stripslashes($row["id_observaciones"]);
+            $placa=stripslashes($row["fk_placa"]);
+            $descripcion_reparacion=stripslashes($row["descripcion_reparacion"]);
+            $cod_repuesto=stripslashes($row["cod_repuesto"]);
+            $documento=stripslashes($row["documento"]);
+            $fecha_entrada=stripslashes($row["fecha_entrada"]);
+            $fecha_salida=stripslashes($row["fecha_salida"]);
+            $nombreimagen=stripslashes($row["imagenes"]);
+
+            include ("destinobitacoras.php");
+		    $imagen=$destino."/".$nombreimagen;
+
+            echo "<tr>";
+                
+                echo "<td data-label='Placa'>$placa</td>";
+                echo "<td data-label='Descripcion'>$descripcion_reparacion</td>";
+                echo "<td data-label='Cod repuesto'>$cod_repuesto</td>";
+                echo "<td data-label='Mecanico'>$documento</td>";
+                echo "<td data-label='Fecha entrada'>$fecha_entrada</td>";
+                echo "<td data-label='Fecha salida'>$fecha_salida</td>";
+                echo "<td data-label='Imagenes'>";
+                    echo "<figure>";
+                        echo "<img src=$imagen alt='imagen'>";
+                    echo "</figure>";
+                echo "</td>";
+                echo "<td data-label='Generar salida'>";
+                    echo "<button class='btn_table fa-solid fa-right-to-bracket'</button>";
+                echo" </td>";
+                echo "<td data-label='Actualizar'>";
+                    echo "<button class='btn_table fa-solid fa-pen-to-square'></button>";
+                echo "</td>";
+                echo "<td data-label='Eliminar'>";
+                    echo "<button class='btn_table fa-solid fa-trash'></button>";
+                echo "</td>";
+            echo "</tr>";
+        endwhile;
+
+            echo" </tbody>";
+        echo "</table>";
+
+        }
+    }
+
+    $nuevo = new Observaciones();
+    $nuevo -> consultar();
+        
+    ?>      
         <a class="btn_bottom" href="pres_registro_observaciones.php">Nueva observación</a>
     </main>
 </body>

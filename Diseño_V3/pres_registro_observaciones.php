@@ -14,19 +14,19 @@
             <article class="article__icon-triangle"> </article>
             <h2>OBSERVACIONES</h2>
             <article class="article__container-form">
-                <form method="POST" action="" >
-                    <label for="">Placa</label>
-                    <input type="text" placeholder="Ingresar placa del vehiculo">
-                    <label for="">Descripcion de reparacion</label>
-                    <input type="text" placeholder="Ingresar descripcion de reparacion">
-                    <label for="">Codigo de repuesto</label>
-                    <input type="text" placeholder="Ingresar codigo de repuesto usado">
-                    <label for="">Fecha de entrada del vehiculo</label>
-                    <input type="datetime-local">
-                    <label for="">Fecha de salida del vehiculo</label>
-                    <input type="datetime-local">
-                    <label for="">Foto del vehiculo</label>
-                    <input type="file">
+                <form method="POST" action="neg_dat_registro_observaciones.php" enctype="multipart/form-data">
+                    <label for="placa">Placa</label>
+                    <input type="text" id="placa" placeholder="Ingresar placa del vehiculo" required>
+                    <label for="des_reparacion">Descripcion de reparacion</label>
+                    <input type="text" id="des_reparacion" placeholder="Ingresar descripcion de reparacion" required>
+                    <label for="cod_repuesto">Codigo de repuesto</label>
+                    <input type="text" id="cod_repuesto" placeholder="Ingresar codigo de repuesto usado" required>
+                    <label for="fecha_entrada">Fecha de entrada del vehiculo</label>
+                    <input type="datetime-local" id="fecha_entrada" required>
+                    <label for="fecha_salida">Fecha de salida del vehiculo</label>
+                    <input type="datetime-local" id="fecha_salida" required>
+                    <label for="foto_vehiculo">Foto del vehiculo</label>
+                    <input type="file" id="foto_vehiculo" required>
                     <input class="input__btn-color" type="submit">
                 </form>
             </article>
