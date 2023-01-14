@@ -161,7 +161,7 @@ main{
 }
 
 
-/* Style_registros */
+/* Responsive Style_formularios */
 .article__container-form form{
     display: block;
 }
@@ -176,6 +176,12 @@ main{
 }
 .article__container-form .input__btn-color{
     margin: 20px 0;
+    width: 50%;
+    margin-left: calc(50% - 25%);
+}
+
+.btn__actualizar-imagen{
+    display: inline-block;
     width: 50%;
     margin-left: calc(50% - 25%);
 }

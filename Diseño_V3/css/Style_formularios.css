@@ -51,3 +51,17 @@ main{
     cursor: pointer;
     padding: 14px 0;
 }
+
+
+/* formulario neg dat actualizacion observaciones*/
+.btn__actualizar-imagen{
+    width: 90%;
+    margin-top: 10px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: purple;
+    border-color: transparent;
+	color: white;
+    cursor: pointer;
+    padding: 14px 0;
+}
