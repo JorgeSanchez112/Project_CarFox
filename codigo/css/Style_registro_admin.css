@@ -10,13 +10,27 @@ header h1{
     margin: 10px 0 10px 0;
 }
 main{
-    background-color: aliceblue;
     height: 100vh;
+    background:#c4a8cd;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    height: 60vh;
+    max-width: 1024px;
+}
+section h2{
+    text-align: center;
+    font-size: 1.8rem;
 }
 form{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+    gap: 5px;
 
     padding: 10px 0 10px 0;
 }
@@ -26,4 +40,51 @@ form label{
 form input{
     width: 90%;
     height: 25px;
+}
+form div{
+    width: 40%;
+}
+
+@media screen and (min-width:1000px) {
+    header h1{
+        font-size: 3.8rem;
+    }
+    main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    section{
+        justify-content: unset;
+    }
+    section h2{
+        font-size: 2.8rem;
+    }
+    form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px 0 10px 0;
+    }
+    form label{
+        display: block;
+        margin: 20px 10px 0px 10px;
+        font-size: 1.8rem;
+    }
+    form input{
+        width: 70%;
+        height: 36px;
+        display: inline-block;
+        margin-top: 20px;
+    }
+    form div{
+        width: 100%;
+        text-align: center;
+    }
+    form div input{
+        width: 40%;
+    }
+
 }
