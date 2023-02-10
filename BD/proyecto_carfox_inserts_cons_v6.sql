@@ -7,7 +7,7 @@ create table usuarios(
     documento int (12) not null,
     nombres text (50) not null,
     apellidos text (50) not null,
-    contrasena varchar (25) not null
+    contrasena varchar (255) not null
 );
 
 create table usuario_rol (
@@ -19,7 +19,9 @@ create table permisos (
 
     id_permiso int (2) primary key not null auto_increment,
     documento int (12) not null,
-    fk_id_rol int (2) not null
+    fk_id_rol int (2) not null,
+    nuevo boolean not null
+    
 );
 
 create table repuestos (
@@ -108,11 +110,11 @@ insert into usuario_rol
 values (NULL,2);
 
 insert into permisos
-values (NULL,10412890,1);
+values (NULL,10412890,1,1);
 
 insert into permisos
-values (NULL,1067219831,2),
-(NULL,321456,2);
+values (NULL,1067219831,2,1),
+(NULL,321456,2,1);
 
 insert into propietarios
 values (NULL,102839,"Juana","Lopez");
