@@ -34,8 +34,8 @@
 
         <section class="c2">
           <form action="neg_dat_evaluar_sesion.php" method="post" class="form_ini">
-            <input type="number" name="documento" placeholder="Indique el numero de documento">
-            <input type="password" name="contrasena" placeholder="Indique su contraseña">
+            <input type="number" name="documento" placeholder="Indique el numero de documento" min="1" max="20" >
+            <input type="password" name="contrasena" placeholder="Indique su contraseña" required size="10" minlength="1" maxlength="20">
             <input type="submit" class="btn" name="register" value="Iniciar Sesion"/>
             <p><a href="pres_camb_contrasena.php">¿Has olvidado la contraseña?</a></p>
           </form>
