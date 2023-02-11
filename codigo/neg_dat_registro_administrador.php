@@ -15,7 +15,7 @@ class Usuarios
 		$nuevo="0";
 		mysqli_query($db, "INSERT INTO permisos(id_permiso, documento, fk_id_rol, nuevo) VALUES (NULL,'$documento','$fk_id_rol','$nuevo')");
 
-        unlink(pres_usuario_nuevo.php);
+        unlink('pres_usuario_nuevo.php');
 
         header('location:index.php');
 	}
