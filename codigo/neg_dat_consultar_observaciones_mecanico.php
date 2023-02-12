@@ -19,7 +19,7 @@
         include ("conexion.php");
         echo "<table class='table'>";
 
-        $sql = "SELECT * FROM observaciones";
+        $sql = "SELECT * FROM observaciones WHERE documento='$_SESSION[usuario_actual]'";
 	    if(!$result = $db->query($sql)):
 		    die('Hay un error primera consulta!!! ['.$db->error.']');
         endif;
@@ -34,6 +34,7 @@
                 echo "<th>Fecha salida</th>";
                 echo "<th>Imagenes</th>";
                 echo "<th>Generar salida</th>";
+                echo "<th>Generar reporte</th>";
                 echo "<th>Actualizar</th>";
             echo "</tr>";
         while ($row=$result->fetch_assoc()):
@@ -45,6 +46,7 @@
             $fecha_entrada=stripslashes($row["fecha_entrada"]);
             $fecha_salida=stripslashes($row["fecha_salida"]);
             $nombreimagen=stripslashes($row["imagenes"]);
+            $reported=stripslashes($row["reporte"]);
 
             include ("destinobitacoras.php");
 		    $imagen=$destino."/".$nombreimagen;
@@ -62,12 +64,34 @@
                         echo "<img src=$imagen alt='imagen'>";
                     echo "</figure>";
                 echo "</td>";
-                echo "<td data-label='Generar salida'>";
-                    echo "<form name='shdhd' method='POST' action='neg_dat_registro_salida_observaciones_mecanico.php'>";
-		            echo "<input type= 'hidden' class='barra' name = 'id_observaciones' Value='$id_observaciones'>";
-                    echo "<button  class='btn_table fa-solid fa-right-to-bracket' type='submit' Value='Salida'></button>";
-                    echo "</form>";
-                echo" </td>";
+                if($reported == 0){
+                    echo "<td data-label='Generar salida'>";
+                        echo "<form name='shdhd' method='POST' action='neg_dat_registro_salida_observaciones_mecanico.php'>";
+                        echo "<input type= 'hidden' class='barra' name = 'id_observaciones' Value='$id_observaciones'>";
+                        echo "<button  class='btn_table fa-solid fa-right-to-bracket' id='salida' type='submit' Value='Salida' enabled></button>";
+                        echo "</form>";
+                    echo" </td>";
+                    echo "<td data-label='Generar reporte'>";
+                        echo "<form name='shdhd' method='POST' action=''>";
+                        echo "<input type= 'hidden' class='barra' name = 'id_observaciones' Value='$id_observaciones'>";
+                        echo "<button class='btn_table fa-solid fa-file' id='reporte' type='submit' Value='Reporte' disabled></button>";
+                        echo "</form>";
+                    echo" </td>";
+
+                }elseif($reported == 1){
+                    echo "<td data-label='Generar salida'>";
+                        echo "<form name='shdhd' method='POST' action='neg_dat_registro_salida_observaciones_mecanico.php'>";
+                        echo "<input type= 'hidden' class='barra' name = 'id_observaciones' Value='$id_observaciones'>";
+                        echo "<button  class='btn_table fa-solid fa-right-to-bracket' id='salida' type='submit' Value='Salida' disabled></button>";
+                        echo "</form>";
+                    echo" </td>";
+                    echo "<td data-label='Generar reporte'>";
+                        echo "<form name='shdhd' method='POST' action=''>";
+                        echo "<input type= 'hidden' class='barra' name = 'id_observaciones' Value='$id_observaciones'>";
+                        echo "<button  class='btn_table fa-solid fa-file' id='reporte' type='submit' Value='Reporte' enabled></button>";
+                        echo "</form>";
+                    echo" </td>";
+                }
                 echo "<td data-label='Actualizar'>";
                     echo "<form name='shdhd' method='POST' action='pres_neg_dat_actualizar_observaciones_mecanico.php'>";
                     echo "<input type= 'hidden' name = 'id_observaciones' Value='$id_observaciones'>";

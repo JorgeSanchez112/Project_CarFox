@@ -35,7 +35,7 @@
                         <option value="">Seleccionar placa</option>
                     <?php while($row = $result1-> fetch_assoc()): ?>
                        <?=$placad = stripslashes($row["placa"]); ?>
-                        <option value=" <?=$placad?> "> <?=$placad?> </option>
+                        <option value="<?=$placad?> "> <?=$placad?> </option>
                     <?php endwhile;  ?>
                     </select>
                     <label for="des_reparacion">Descripcion de reparacion</label>
@@ -45,7 +45,7 @@
                         <option value="">Seleccionar repuesto</option>
                     <?php while($row = $result-> fetch_assoc()): ?>
                        <?=$codigo_repuesto = stripslashes($row["cod_repuesto"]); ?>
-                        <option value=" <?=$codigo_repuesto?> "> <?=$codigo_repuesto?> </option>
+                        <option value="<?=$codigo_repuesto?> "> <?=$codigo_repuesto?> </option>
                     <?php endwhile;  ?>
                     </select>
                     <input type="hidden" name="documento" placeholder="ingrese el documento" required>
