@@ -14,6 +14,6 @@ class Vehiculos
 	}
 }
 $nuevo=new Vehiculos();
-$nuevo-> registrar($_POST["placa"],$_POST["marca"],$_POST["modelo"],$_POST["tipo"],$_POST["mecanico"],$_POST["estado"],$_POST["descripcion"],$_POST["doc_propietario"]);
+$nuevo-> registrar($_POST["placa"],$_POST["marca"],$_POST["modelo"],$_POST["tipo"],$_SESSION["usuario_actual"],$_POST["estado"],$_POST["descripcion"],$_POST["doc_propietario"]);
 
 ?>

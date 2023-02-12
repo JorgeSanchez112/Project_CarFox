@@ -6,6 +6,10 @@
         die('hay un error primera consulta!!! ['. $db->error.']');
     endif;
 
+    $sql1=("SELECT * FROM vehiculos");
+    if(!$result1 = $db->query($sql1)):
+        die('hay un error primera consulta!!! ['. $db->error.']');
+    endif;
     
 ?>
 
@@ -27,7 +31,13 @@
             <article class="article__container-form">
                 <form method="POST" action="neg_dat_registro_observaciones_mecanico.php" enctype="multipart/form-data">
                     <label for="placa">Placa</label>
-                    <input type="text" id="placa" name="placa" placeholder="Ingresar placa del vehiculo" required>
+                    <select id="placa" name="placa" class="select__codrepuesto-form" placeholder="Ingresar placa del vehiculo" required>
+                        <option value="">Seleccionar placa</option>
+                    <?php while($row = $result1-> fetch_assoc()): ?>
+                       <?=$placad = stripslashes($row["placa"]); ?>
+                        <option value=" <?=$placad?> "> <?=$placad?> </option>
+                    <?php endwhile;  ?>
+                    </select>
                     <label for="des_reparacion">Descripcion de reparacion</label>
                     <input type="text" id="des_reparacion" name="descripcion_reparacion" placeholder="Ingresar descripcion de reparacion" required>
                     <label for="cod_repuesto">Codigo de repuesto</label>

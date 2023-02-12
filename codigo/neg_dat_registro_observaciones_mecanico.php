@@ -29,14 +29,16 @@ class Observaciones
 	
 						$fecha_entrada = date("Y-m-d H:i:s");
 		
+						//Variable para poder generar reporte o no
+
+						$reporte = 0;
 		
 		include('conexion.php');
 
 
 		if (move_uploaded_file($_FILES['file']['tmp_name'],$destino.'/'.$imagenfinal)){
-		mysqli_query($db,"INSERT INTO observaciones(id_observaciones, fk_placa, cod_repuesto,descripcion_reparacion, documento, fecha_entrada, fecha_salida, imagenes) VALUES (NULL,'$placa','$cod_repuesto', '$descripcion_reparacion','$usuario_actual','$fecha_entrada','$fecha_salida','$imagenfinal')");
+		mysqli_query($db,"INSERT INTO observaciones(id_observaciones, fk_placa, cod_repuesto,descripcion_reparacion, documento, fecha_entrada, fecha_salida, imagenes, reporte) VALUES (NULL,'$placa','$cod_repuesto', '$descripcion_reparacion','$usuario_actual','$fecha_entrada','$fecha_salida','$imagenfinal','$reporte')");
 	}
-
 		
 	}
 }
