@@ -92,6 +92,10 @@ alter table observaciones
 add foreign key (fk_placa)
 references vehiculos(id_vehiculo);
 
+alter table observaciones
+add foreign key (cod_repuesto)
+references repuestos(id_repuesto);
+
 alter table camb_contra
 add foreign key (fk_documento)
 references usuarios(id_usuario);
