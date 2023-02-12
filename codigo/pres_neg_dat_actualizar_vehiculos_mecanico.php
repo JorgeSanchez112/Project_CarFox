@@ -47,8 +47,7 @@
                         echo "<input type='text' id='modelo' name='modelo' placeholder='Ingresar modelo' value='$modelo' required>";
                         echo "<label for='tipo'>Tipo de vehiculo</label>";
                         echo "<input type='text' id='tipo' name='tipo' placeholder='Ingresar tipo de vehiculo' value='$tipo_de_vehiculo' required>";
-                        echo "<label for='mecanico'>Mecanico</label>";
-                        echo "<input type='number' id='mecanico' name='mecanico' placeholder='Ingresar doc mecanico' value='$mecanico' required>";
+                        echo "<input type='hidden' id='mecanico' name='mecanico' placeholder='Ingresar doc mecanico' value='$mecanico' >";
                         echo "<label for='estado'>Estado del vehiculo</label>";
                         echo "<input type='text' id='estado' name='estado' placeholder='Ingresar estado del vehiculo' value='$estado' required>";
                         echo "<label for='descripcion'>Descripcion de entrada del vehiculo</label>";
