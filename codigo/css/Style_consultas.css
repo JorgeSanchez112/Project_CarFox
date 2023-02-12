@@ -70,7 +70,7 @@
     cursor: pointer;
 }
 button:disabled {
-    background: blue;
+    background: darkgray;
 }
 .btn_bottom{
     display: flex;

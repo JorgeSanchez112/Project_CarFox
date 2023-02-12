@@ -14,6 +14,10 @@ Class Observaciones{
 
         mysqli_query($db,"UPDATE observaciones SET fecha_salida='$fecha_salida' WHERE  id_observaciones='$id_observaciones'");
 
+        $reporte = 1;
+
+        mysqli_query($db,"UPDATE observaciones SET reporte='$reporte' WHERE  id_observaciones='$id_observaciones'");
+
         header ("location:neg_dat_consultar_observaciones.php");
 
     }
