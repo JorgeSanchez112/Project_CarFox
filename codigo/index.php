@@ -31,7 +31,6 @@
         <section class="c1">
           <h1>Carfox</h1>
         </section>
-
         <section class="c2">
           <form action="neg_dat_evaluar_sesion.php" method="post" class="form_ini">
             <input type="number" name="documento" placeholder="Indique su documento" oninput="maxLengthCheck(this)" maxlength = "10">
