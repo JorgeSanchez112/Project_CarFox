@@ -74,7 +74,7 @@
                     echo "<td data-label='Generar reporte'>";
                         echo "<form name='shdhd' method='POST' action=''>";
                         echo "<input type= 'hidden' class='barra' name = 'id_observaciones' Value='$id_observaciones'>";
-                        echo "<button class='btn_table fa-solid fa-file' id='reporte' type='submit' Value='Reporte' disabled></button>";
+                         echo "<a href=index1.php  download=descargar class='btn_table fa-solid fa-file'></a>";
                         echo "</form>";
                     echo" </td>";
 
