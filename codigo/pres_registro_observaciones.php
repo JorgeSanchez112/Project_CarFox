@@ -16,12 +16,12 @@
             <article class="article__container-form">
                 <form method="POST" action="neg_dat_registro_observaciones.php" enctype="multipart/form-data">
                     <label for="placa">Placa</label>
-                    <input type="text" id="placa" name="placa" placeholder="Ingresar placa del vehiculo" required>
+                    <input type="text" id="placa" name="placa" placeholder="Ingresar placa del vehiculo" required size="10" minlength="1" maxlength="6">
                     <label for="des_reparacion">Descripcion de reparacion</label>
-                    <input type="text" id="des_reparacion" name="descripcion_reparacion" placeholder="Ingresar descripcion de reparacion" required>
+                    <input type="text" id="des_reparacion" name="descripcion_reparacion" placeholder="Ingresar descripcion de reparacion" required size="10" minlength="1" maxlength="45">
                     <label for="cod_repuesto">Codigo de repuesto</label>
-                    <input type="text" id="cod_repuesto" name="cod_repuesto" placeholder="Ingresar codigo de repuesto usado" required>
-                    <input type="hidden" name="documento" placeholder="ingrese el documento" required>
+                    <input type="text" id="cod_repuesto" name="cod_repuesto" placeholder="Ingresar codigo de repuesto usado" required size="10" minlength="1" maxlength="10">
+                    <input type="hidden" name="documento" placeholder="ingrese el documento" required min="1" max="15">
                     <input type="hidden" name="fecha_salida" id="fecha_salida">
                     <label for="foto_vehiculo">Foto del vehiculo</label>
                     <input type="file" name="file" id="foto_vehiculo" required>
