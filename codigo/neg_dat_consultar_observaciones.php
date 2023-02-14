@@ -74,7 +74,7 @@
                         echo "</form>";
                     echo" </td>";
                     echo "<td data-label='Generar reporte'>";
-                        echo "<form name='shdhd' method='POST' action=''>";
+                        echo "<form name='shdhd' method='POST' action='index1.php'>";
                         echo "<input type= 'hidden' class='barra' name = 'id_observaciones' Value='$id_observaciones'>";
                         echo "<button class='btn_table fa-solid fa-file' id='reporte' type='submit' Value='Reporte' disabled></button>";
                         echo "</form>";
@@ -88,9 +88,10 @@
                         echo "</form>";
                     echo" </td>";
                     echo "<td data-label='Generar reporte'>";
-                        echo "<form name='shdhd' method='POST' action=''>";
+                        echo "<form name='shdhd' method='POST' action='index1.php'>";
                         echo "<input type= 'hidden' class='barra' name = 'id_observaciones' Value='$id_observaciones'>";
-                        echo "<a href=index1.php  download=descargar class='btn_table fa-solid fa-file'></a>";
+                        echo "<input type= 'hidden' class='barra' name = 'placa' Value='$placa'>";
+                        echo "<button class='btn_table fa-solid fa-file' id='reporte' type='submit' Value='Reporte' enabled></button>";
                         echo "</form>";
                     echo" </td>";
 

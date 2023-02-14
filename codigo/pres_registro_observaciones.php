@@ -28,7 +28,7 @@
             <article class="article__icon-triangle"> </article>
             <h2>OBSERVACIONES</h2>
             <article class="article__container-form">
-                <form method="POST" action="neg_dat_registro_observaciones_mecanico.php" enctype="multipart/form-data">
+                <form method="POST" action="neg_dat_registro_observaciones.php" enctype="multipart/form-data">
                     <label for="placa">Placa</label>
                     <select id="placa" name="placa" class="select__codrepuesto-form" placeholder="Ingresar placa del vehiculo" required>
                         <option value="">Seleccionar placa</option>

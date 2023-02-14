@@ -11,7 +11,7 @@ function Header()
     // Movernos a la derecha
     $this->Cell(10);
     // Título
-    $this->Cell(60,10,'Reporte observaciones',0,0,'C');
+    $this->Cell(170,10,'REPORTE REPARACION',0,0,'C');
     // Salto de línea
     $this->Ln(20);
   
@@ -31,21 +31,70 @@ function Footer()
 }
 }
 
+function Reporte($id_observaciones, $placa){
+
 require 'conexion.php';
-$consulta="SELECT * FROM observaciones";
+
+$consulta1="SELECT * FROM vehiculos WHERE placa = '$placa'";
+$resultado1 = $db->query($consulta1);
+
+$consulta="SELECT * FROM observaciones WHERE id_observaciones = $id_observaciones";
 $resultado = $db->query($consulta);
+
 
 $pdf = new PDF();
 $pdf->AddPage();
-$pdf->SetFont('Arial','',7);
+$pdf->SetFont('Arial','',14);
+
+$pdf-> Write(10,'Descripcion de entrada: ');
+
+$pdf->SetFont('Arial','',11);
+
+while ($row1 = $resultado1->fetch_assoc()){
+    $pdf-> write(10,$row1['descripcion']);
+}
+$pdf-> Ln(10);
+
+
+$pdf->SetFont('Arial','',14);
+
+$pdf-> Write(10,'Placa: ');
+
+$pdf->SetFont('Arial','',11);
 
 while ($row = $resultado->fetch_assoc()){
-	$pdf-> cell(30,10,$row['fk_placa'],1,0,'C',0);
-    $pdf-> cell(30,10,$row['cod_repuesto'],1,0,'C',0);
-    $pdf-> cell(30,10,$row['documento'],1,0,'C',0);
-    $pdf-> cell(30,10,$row['fecha_entrada'],1,0,'C',0);
-    $pdf-> cell(30,10,$row['fecha_salida'],1,0,'C',0);
-    $pdf-> cell(30,10,$row['imagenes'],1,1,'C',0);
+	$pdf-> Write(10,$row['fk_placa']);
+    $pdf->SetFont('Arial','',14);
+    $pdf-> Write(10,'  Mecanico: ');
+    $pdf->SetFont('Arial','',11);
+    $pdf-> Write(10,$row['documento']);
+    $pdf-> Ln(10);
+    $pdf->SetFont('Arial','',14);
+    $pdf-> Write(10,'Fecha de entrada: ');
+    $pdf->SetFont('Arial','',11);
+    $pdf-> Write(10,$row['fecha_entrada']);
+    $pdf-> Ln(10);
+    $pdf->SetFont('Arial','',14);
+    $pdf-> Write(10,'Descripcion de reparacion: ');
+    $pdf->SetFont('Arial','',11);
+    $pdf-> Write(10,$row['descripcion_reparacion']);
+    $pdf-> Ln(10);
+    $pdf->SetFont('Arial','',14);
+    $pdf-> Write(10,'Fecha de salida: ');
+    $pdf->SetFont('Arial','',11);
+    $pdf-> Write(10,$row['fecha_salida']);
+    $pdf-> Ln(10);
+    $pdf->SetFont('Arial','',14);
+    $pdf-> Write(10,'IMAGENES: ');
+    $pdf-> Image('imagenes/'.$row['imagenes'],80,100,80,40);
+
 }
+
 $pdf->Output();
+
+}
+
+
+
+Reporte($_POST['id_observaciones'],$_POST['placa']);
 ?>
