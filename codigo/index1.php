@@ -44,13 +44,34 @@ $resultado = $db->query($consulta);
 
 $pdf = new PDF();
 $pdf->AddPage();
-$pdf->SetFont('Arial','',14);
 
-$pdf-> Write(10,'Descripcion de entrada: ');
-
-$pdf->SetFont('Arial','',11);
 
 while ($row1 = $resultado1->fetch_assoc()){
+   
+    $doc_propietario = ($row1['doc_propietario']);
+
+    $pdf->SetFont('Arial','',14);
+
+    $pdf-> Write(10,'Nombre de propietario: ');
+    
+    $pdf->SetFont('Arial','',11);
+
+    $consulta2="SELECT * FROM propietarios WHERE doc_propietario = '$doc_propietario'";
+    $resultado2 = $db->query($consulta2);
+
+    while($row2 = $resultado2->fetch_assoc()){
+        $pdf-> write(10,$row2['nombres']);
+        $pdf-> write(10,' ');
+        $pdf-> write(10,$row2['apellidos']);
+    }
+    $pdf-> Ln(10);
+
+    $pdf->SetFont('Arial','',14);
+
+    $pdf-> Write(10,'Descripcion de entrada: ');
+
+    $pdf->SetFont('Arial','',11);
+
     $pdf-> write(10,$row1['descripcion']);
 }
 $pdf-> Ln(10);
@@ -86,7 +107,7 @@ while ($row = $resultado->fetch_assoc()){
     $pdf-> Ln(10);
     $pdf->SetFont('Arial','',14);
     $pdf-> Write(10,'IMAGENES: ');
-    $pdf-> Image('imagenes/'.$row['imagenes'],80,100,80,40);
+    $pdf-> Image('imagenes/'.$row['imagenes'],36,110,140,70);
 
 }
 
