@@ -17,7 +17,7 @@ function Header()
 
 
 // Pie de página
-function Footer()
+/* function Footer()
 {
     // Posición: a 1,5 cm del final
     $this->SetY(-29);
@@ -25,7 +25,7 @@ function Footer()
     $this->SetFont('Arial','',8);
     // Número de página
     $this->Cell(0,10,'Pagina '.$this->PageNo().'/1',10,0,'C');
-}
+} */
 }
 
 function Reporte($id_observaciones, $placa, $imagenreporte){
@@ -35,7 +35,7 @@ require 'conexion.php';
 $consulta3="SELECT * FROM imagen_reporte WHERE nombre ='$imagenreporte'";
 $resultado3 = $db->query($consulta3);
 
-$consulta1="SELECT * FROM vehiculos WHERE placa = '$placa'";
+$consulta1="SELECT * FROM vehiculos WHERE id_vehiculo = '$id_observaciones'";
 $resultado1 = $db->query($consulta1);
 
 $consulta="SELECT * FROM observaciones WHERE id_observaciones = $id_observaciones";

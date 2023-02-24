@@ -6,7 +6,7 @@
         die('hay un error primera consulta!!! ['. $db->error.']');
     endif;
 
-    $sql1=("SELECT * FROM vehiculos");
+    $sql1=("SELECT * FROM vehiculos ORDER BY `id_vehiculo` DESC LIMIT 5;");
     if(!$result1 = $db->query($sql1)):
         die('hay un error primera consulta!!! ['. $db->error.']');
     endif;
@@ -33,8 +33,8 @@
                     <select id="placa" name="placa" class="select__codrepuesto-form" placeholder="Ingresar placa del vehiculo" required>
                         <option value="">Seleccionar placa</option>
                     <?php while($row = $result1-> fetch_assoc()): ?>
-                       <?=$placad = stripslashes($row["placa"]); ?>
-                       <?=$ddescripcion = stripslashes($row["descripcion"]);?>
+                        <?=$placad = stripslashes($row["placa"]); ?>
+                        <?=$ddescripcion = stripslashes($row["descripcion"]);?>
                         <option value="<?=$placad?>"> <?=$placad?> </option>
                     <?php endwhile;  ?>
                     </select>
