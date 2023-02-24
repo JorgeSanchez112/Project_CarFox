@@ -39,11 +39,11 @@
                     echo "<form method='POST' action='neg_dat_actualizar_observaciones_mecanico.php' enctype='multipart/form-data'>";
                         echo "<input type='hidden' name='id_observaciones' value='$id_observaciones' required>";
                         echo "<label for='placa'>Placa</label>";
-                        echo "<input type='text' id='placa' name='placa' placeholder='Ingresar placa del vehiculo' value='$placa' required>";
+                        echo "<input type='text' id='placa' name='placa' placeholder='Ingresar placa del vehiculo' value='$placa' maxlength='6'>";
                         echo "<label for='des_reparacion'>Descripcion de reparacion</label>";
-                        echo "<input type='text' id='des_reparacion' name='descripcion_reparacion' placeholder='Ingresar descripcion de reparacion' value='$descripcion_reparacion' required>";
+                        echo "<input type='text' id='des_reparacion' name='descripcion_reparacion' placeholder='Ingresar descripcion de reparacion' value='$descripcion_reparacion' maxlength='80'>";
                         echo "<label for='cod_repuesto'>Codigo de repuesto</label>";
-                        echo "<input type='text' id='cod_repuesto' name='cod_repuesto' placeholder='Ingresar codigo de repuesto usado' value='$cod_repuesto' required>";
+                        echo "<input type='text' id='cod_repuesto' name='cod_repuesto' placeholder='Ingresar codigo de repuesto usado' value='$cod_repuesto' maxlength='10'>";
                         echo "<input type='hidden' name='documento' placeholder='ingrese el documento' value='$documento'>";
                         echo "<input type='hidden' name='fecha_entrada' id='fecha_entrada' value='$fecha_entrada' required>";
                         echo "<input type='hidden' name='fecha_salida' id='fecha_salida' value='$fecha_salida' required>";

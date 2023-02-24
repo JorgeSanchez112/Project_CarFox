@@ -35,11 +35,11 @@
                     echo "<form method='POST' action='neg_dat_actualizar_propietarios_mecanico.php'>";
                         echo "<input type='hidden' name='id_propietario' value='$id_propietario'>";
                         echo "<label for='documento'>Documento</label>";
-                        echo "<input type='number' id='documento' name='doc_propietario' placeholder='Ingresar documento' value='$doc_propietario' required>";
+                        echo "<input type='number' id='documento' name='doc_propietario' placeholder='Ingresar documento' value='$doc_propietario' oninput='maxLengthCheck(this)' maxlength = '10'>";
                         echo "<label for='nombre'>Nombres</label>";
-                        echo "<input type='text' id='nombre' name='nombres' placeholder='Ingresar descripcion de reparacion' value='$nombres' required>";
+                        echo "<input type='text' id='nombre' name='nombres' placeholder='Ingresar descripcion de reparacion' value='$nombres' maxlength='25'>";
                         echo "<label for='apellido'>Apellidos</label>";
-                        echo "<input type='text' id='apellido' name='apellidos' placeholder='Ingresar codigo de repuesto usado' value='$apellidos' required>";
+                        echo "<input type='text' id='apellido' name='apellidos' placeholder='Ingresar codigo de repuesto usado' value='$apellidos' maxlength='25'>";
                         echo "<input class='input__btn-color' type='submit'>";
                     echo "</form>";
                 echo "</article>";
@@ -53,3 +53,4 @@
     ?>
     </main>
 </body>
+<script src="js/maxLengthNumber.js"></script>
