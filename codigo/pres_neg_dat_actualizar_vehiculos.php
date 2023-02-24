@@ -40,21 +40,21 @@
                     echo "<form method='POST' action='neg_dat_actualizar_vehiculos.php'>";
                         echo "<input type='hidden' name='id_vehiculo' value='$id_vehiculo'>";
                         echo "<label for='placa'>Placa del vehiculo</label>";
-                        echo "<input type='text' id='placa' name='placa' placeholder='Ingresar placa del vehiculo' value='$placa' required>";
+                        echo "<input type='text' id='placa' name='placa' placeholder='Ingresar placa del vehiculo' value='$placa' maxlength='6'>";
                         echo "<label for='marca' >Marca del vehiculo</label>";
-                        echo "<input type='text' id='marca' name='marca' placeholder='Ingresar marca' value='$marca' required>";
+                        echo "<input type='text' id='marca' name='marca' placeholder='Ingresar marca' value='$marca' maxlength='25'>";
                         echo "<label for='modelo'>Modelo del vehiculo</label>";
-                        echo "<input type='text' id='modelo' name='modelo' placeholder='Ingresar modelo' value='$modelo' required>";
+                        echo "<input type='text' id='modelo' name='modelo' placeholder='Ingresar modelo' value='$modelo' maxlength='35'>";
                         echo "<label for='tipo'>Tipo de vehiculo</label>";
-                        echo "<input type='text' id='tipo' name='tipo' placeholder='Ingresar tipo de vehiculo' value='$tipo_de_vehiculo' required>";
+                        echo "<input type='text' id='tipo' name='tipo' placeholder='Ingresar tipo de vehiculo' value='$tipo_de_vehiculo' maxlength='70'>";
                         echo "<label for='mecanico'>Mecanico</label>";
-                        echo "<input type='number' id='mecanico' name='mecanico' placeholder='Ingresar doc mecanico' value='$mecanico' required>";
+                        echo "<input type='number' id='mecanico' name='mecanico' placeholder='Ingresar doc mecanico' value='$mecanico' maxlength='10'>";
                         echo "<label for='estado'>Estado del vehiculo</label>";
-                        echo "<input type='text' id='estado' name='estado' placeholder='Ingresar estado del vehiculo' value='$estado' required>";
+                        echo "<input type='text' id='estado' name='estado' placeholder='Ingresar estado del vehiculo' value='$estado' maxlength='45'>";
                         echo "<label for='descripcion'>Descripcion de entrada del vehiculo</label>";
-                        echo "<input type='text' id='descripcion' name='descripcion' placeholder='Descripcion entrada vehiculo' value='$descripcion' required>";
+                        echo "<input type='text' id='descripcion' name='descripcion' placeholder='Descripcion entrada vehiculo' value='$descripcion' maxlength='80'>";
                         echo "<label for='doc_propietario'>Documento de propietario</label>";
-                        echo "<input type='number' id='doc_propietario' name='doc_propietario' placeholder='Ingresar doc propietario' value='$doc_propietario' required>";
+                        echo "<input type='number' id='doc_propietario' name='doc_propietario' placeholder='Ingresar doc propietario' value='$doc_propietario' oninput='maxLengthCheck(this)' maxlength = '10'>";
                         echo "<input class='input__btn-color' type='submit'>";
                     echo "</form>";
                 echo "</article>";
@@ -69,3 +69,4 @@
     </main>
 </body>
 </html>
+<script src="js/maxLengthNumber.js"></script>

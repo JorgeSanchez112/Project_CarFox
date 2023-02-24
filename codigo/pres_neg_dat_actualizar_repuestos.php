@@ -36,13 +36,13 @@
                     echo "<form method='POST' action='neg_dat_actualizar_repuestos.php'>";
                         echo "<input type='hidden' name='id_repuesto' value='$id_repuesto'>";
                         echo "<label for='repuesto'>Nombre del repuesto</label>";
-                        echo "<input type='text' id='repuesto' name='repuesto' placeholder='Ingresar nombre de repuesto' value='$repuesto' required>";
+                        echo "<input type='text' id='repuesto' name='repuesto' placeholder='Ingresar nombre de repuesto' value='$repuesto' maxlength='45'>";
                         echo "<label for='des_repuesto' >Descripcion del repuesto</label>";
-                        echo "<input type='text' id='des_repuesto' name='descripcion' placeholder='Descripcion repuesto' value='$descripcion' required>";
+                        echo "<input type='text' id='des_repuesto' name='descripcion' placeholder='Descripcion repuesto' value='$descripcion' maxlength='80'>";
                         echo "<label for='cod_repuesto'>Codigo del repuesto</label>";
-                        echo "<input type='text' id='cod_repuesto' name='cod_repuesto' placeholder='Codigo repuesto' value='$cod_repuesto' required>";
+                        echo "<input type='text' id='cod_repuesto' name='cod_repuesto' placeholder='Codigo repuesto' value='$cod_repuesto' maxlength='10'>";
                         echo "<label for='entrada'>Cantidad inicial del repuesto</label>";
-                        echo "<input type='number' id='entrada' name='entrada' placeholder='Ingresar cantidad inicial' value='$entrada' required>";;
+                        echo "<input type='number' id='entrada' name='entrada' placeholder='Ingresar cantidad inicial' value='$entrada' oninput='maxLengthCheck(this)' maxlength = '10'>";
                         echo "<input class='input__btn-color' type='submit'>";
                     echo "</form>";
                 echo "</article>";
@@ -57,3 +57,4 @@
     </main>
 </body>
 </html>
+<script src="js/maxLengthNumber.js"></script>
