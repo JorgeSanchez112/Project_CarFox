@@ -16,13 +16,13 @@
             <article class="article__container-form">
                 <form method="POST" action="neg_dat_registro_repuestos_mecanico.php">
                     <label for="repuesto">Nombre del repuesto</label>
-                    <input type="text" id="repuesto" name="repuesto" placeholder="Ingresar nombre de repuesto" required>
+                    <input type="text" id="repuesto" name="repuesto" placeholder="Ingresar nombre de repuesto" required maxlength="45">
                     <label for="des_repuesto" >Descripcion del repuesto</label>
-                    <input type="text" id="des_repuesto" name="descripcion" placeholder="Descripcion repuesto" required>
+                    <input type="text" id="des_repuesto" name="descripcion" placeholder="Descripcion repuesto" required maxlength="80">
                     <label for="cod_repuesto">Codigo del repuesto</label>
-                    <input type="text" id="cod_repuesto" name="cod_repuesto" placeholder="Codigo repuesto" required>
+                    <input type="text" id="cod_repuesto" name="cod_repuesto" placeholder="Codigo repuesto" required maxlength="10">
                     <label for="entrada">Cantidad inicial del repuesto</label>
-                    <input type="number" id="entrada" name="entrada" placeholder="Ingresar cantidad inicial" required>
+                    <input type="number" id="entrada" name="entrada" placeholder="Ingresar cantidad inicial" oninput="maxLengthCheck(this)" maxlength = "10">
                     <input type="hidden" name="salida" value="0" required>
                     <input class="input__btn-color" type="submit">
                 </form>
@@ -31,3 +31,4 @@
     </main>
 </body>
 </html>
+<script src="js/maxLengthNumber.js"></script>
