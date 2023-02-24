@@ -31,7 +31,7 @@
             echo "<article class='article__container-form'>";
                     echo "<form method='POST' action='neg_dat_actualizar_observaciones_imagen.php' enctype='multipart/form-data'>";
                     echo "<input type='hidden' name='id_observaciones' value='$id_observaciones'>";
-                    echo "<input type='hidden' name='nombre' value='$nombre'";
+                    echo "<input type='hidden' name='nombre' value='$nombre'>";
                     echo "<label for='foto_vehiculo'>Foto del vehiculo</label>";
                     echo "<input type='file' name='file[]' id='foto_vehiculo' multiple required>";
                     echo "<input class='input__btn-color' type='submit'>";

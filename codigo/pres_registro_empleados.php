@@ -19,9 +19,9 @@
 
                     <input type="number" id="documento" name="documento" placeholder="Ingresar numero de documento" oninput="maxLengthCheck(this)" maxlength = "10" required >
                     <label for="nombre" >Nombres</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ingresar nombre" maxlength="25"> required>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingresar nombre" maxlength="25" required>
                     <label for="apellido">Apellidos</label>
-                    <input type="text" id="apellido" name="apellido" placeholder="Ingresar apellido" maxlength="25">
+                    <input type="text" id="apellido" name="apellido" placeholder="Ingresar apellido" maxlength="25" required>
                     <input class="input__btn-color" type="submit">
                 </form>
             </article>

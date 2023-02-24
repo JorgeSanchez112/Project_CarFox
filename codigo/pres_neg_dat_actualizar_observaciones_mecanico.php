@@ -30,6 +30,7 @@
                 $fecha_entrada=stripslashes($row["fecha_entrada"]);
                 $fecha_salida=stripslashes($row["fecha_salida"]);
                 $imagenes=stripslashes($row["imagenes"]);
+                $nombre_img=stripslashes($row["nombre_img"]);
             endwhile;
 
             echo "<section class='container'>";
@@ -47,7 +48,7 @@
                         echo "<input type='hidden' name='documento' placeholder='ingrese el documento' value='$documento'>";
                         echo "<input type='hidden' name='fecha_entrada' id='fecha_entrada' value='$fecha_entrada' required>";
                         echo "<input type='hidden' name='fecha_salida' id='fecha_salida' value='$fecha_salida' required>";
-                        echo "<a class='btn__actualizar-imagen' href='pres_neg_dat_actualizar_imagen_mecanico.php?id_observaciones=$id_observaciones'>Actualizar imagen</a>";
+                        echo "<a class='btn__actualizar-imagen' href='pres_neg_dat_actualizar_imagen_mecanico.php?id_observaciones=$id_observaciones&nombre=$nombre_img'>Actualizar imagen</a>";
                         echo "<input class='input__btn-color' type='submit'>";
                     echo "</form>";
                 echo "</article>";

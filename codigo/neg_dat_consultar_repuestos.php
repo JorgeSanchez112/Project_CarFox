@@ -17,11 +17,12 @@
         public function consultar ()
         {
         include ("conexion.php");
+
         echo "<table class='table'>";
 
         $sql = "SELECT * FROM repuestos";
 	    if(!$result = $db->query($sql)):
-		    die('Hay un error primera consulta!!! ['.$db->error.']');
+		    die('Hay un error segunda consulta!!! ['.$db->error.']');
         endif;
         echo "<caption>Repuestos</caption>";
         echo "<tbody>";
@@ -31,6 +32,7 @@
                 echo "<th>Codigo repuesto</th>";
                 echo "<th>Entrada</th>";
                 echo "<th>Salida</th>";
+                echo "<th>Restante</th>";
                 echo "<th>Actualizar</th>";
                 echo "<th>Eliminar</th>";
             echo "</tr>";
@@ -42,12 +44,15 @@
             $entrada=stripslashes($row["entrada"]);
             $salida=stripslashes($row["salida"]);
 
+            $restante = $entrada - $salida;
+
             echo "<tr>";
                 echo "<td data-label='Repuesto'>$repuesto</td>";
                 echo "<td data-label='Descripcion'>$descripcion</td>";
                 echo "<td data-label='Codigo repuesto'>$cod_repuesto</td>";
                 echo "<td data-label='Entrada'>$entrada</td>";
                 echo "<td data-label='Salida'>$salida</td>";
+                echo "<td data-label='restante'>$restante</td>";
                 echo "<td data-label='Actualizar'>";
                     echo "<form method='POST' action='pres_neg_dat_actualizar_repuestos.php'>";
                     echo "<input type= 'hidden' name = 'id_repuesto' Value='$id_repuesto'>";

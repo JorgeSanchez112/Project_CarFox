@@ -19,7 +19,7 @@
         include ("conexion.php");
         echo "<table class='table'>";
 
-        $sql = "SELECT * FROM vehiculos";
+        $sql = "SELECT * FROM vehiculos WHERE mecanico='$_SESSION[usuario_actual]'";
 	    if(!$result = $db->query($sql)):
 		    die('Hay un error primera consulta!!! ['.$db->error.']');
         endif;
@@ -57,10 +57,10 @@
                 echo "<td data-label='Descripcion'>$descripcion</td>";
                 echo "<td data-label='Doc propietario'>$doc_propietario</td>";
                 echo "<td data-label='Actualizar'>";
-                    echo "<form method='POST' action='pres_neg_dat_actualizar_vehiculos_mecanico.php'>";
-                    echo "<input type= 'hidden' name='id_vehiculo' Value='$id_vehiculo'>";
-                    echo "<button  class='btn_table fa-solid fa-pen-to-square' type='submit' Value='Actualizar'></button>";
-                    echo "</form>";
+                echo "<form method='POST' action='pres_neg_dat_actualizar_vehiculos_mecanico.php'>";
+                echo "<input type= 'hidden' name='id_vehiculo' Value='$id_vehiculo'>";
+                echo "<button  class='btn_table fa-solid fa-pen-to-square' type='submit' Value='Actualizar'></button>";
+                echo "</form>";
             echo "</tr>";
         endwhile;
 

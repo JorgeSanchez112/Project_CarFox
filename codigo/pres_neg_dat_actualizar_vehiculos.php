@@ -35,7 +35,7 @@
 
             echo "<section class='container'>";
                 echo "<article class='article__icon-triangle'> </article>";
-                echo "<h2>EMPLEADOS</h2>";
+                echo "<h2>VEHICULOS</h2>";
                 echo "<article class='article__container-form'>";
                     echo "<form method='POST' action='neg_dat_actualizar_vehiculos.php'>";
                         echo "<input type='hidden' name='id_vehiculo' value='$id_vehiculo'>";

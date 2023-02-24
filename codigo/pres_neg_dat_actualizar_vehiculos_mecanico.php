@@ -35,7 +35,7 @@
 
             echo "<section class='container'>";
                 echo "<article class='article__icon-triangle'> </article>";
-                echo "<h2>EMPLEADOS</h2>";
+                echo "<h2>VEHICULOS</h2>";
                 echo "<article class='article__container-form'>";
                     echo "<form method='POST' action='neg_dat_actualizar_vehiculos_mecanico.php'>";
                         echo "<input type='hidden' name='id_vehiculo' value='$id_vehiculo'>";
@@ -52,8 +52,7 @@
                         echo "<input type='text' id='estado' name='estado' placeholder='Ingresar estado del vehiculo' value='$estado' maxlength='45'>";
                         echo "<label for='descripcion'>Descripcion de entrada del vehiculo</label>";
                         echo "<input type='text' id='descripcion' name='descripcion' placeholder='Descripcion entrada vehiculo' value='$descripcion' maxlength='80'>";
-                        echo "<label for='doc_propietario'>Documento de propietario</label>";
-                        echo "<input type='number' id='doc_propietario' name='doc_propietario' placeholder='Ingresar doc propietario' value='$doc_propietario' oninput='maxLengthCheck(this)' maxlength = '10'>";
+                        echo "<input type='hidden' id='doc_propietario' name='doc_propietario' placeholder='Ingresar doc propietario' value='$doc_propietario' oninput='maxLengthCheck(this)' maxlength = '10'>";
                         echo "<input class='input__btn-color' type='submit'>";
                     echo "</form>";
                 echo "</article>";

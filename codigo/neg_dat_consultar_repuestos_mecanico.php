@@ -31,6 +31,7 @@
                 echo "<th>Codigo repuesto</th>";
                 echo "<th>Entrada</th>";
                 echo "<th>Salida</th>";
+                echo "<th>Restante</th>";
                 echo "<th>Actualizar</th>";
                 echo "</tr>";
         while ($row=$result->fetch_assoc()):
@@ -41,12 +42,15 @@
             $entrada=stripslashes($row["entrada"]);
             $salida=stripslashes($row["salida"]);
 
+            $restante = $entrada - $salida;
+
             echo "<tr>";
                 echo "<td data-label='Repuesto'>$repuesto</td>";
                 echo "<td data-label='Descripcion'>$descripcion</td>";
                 echo "<td data-label='Codigo repuesto'>$cod_repuesto</td>";
                 echo "<td data-label='Entrada'>$entrada</td>";
                 echo "<td data-label='Salida'>$salida</td>";
+                echo "<td data-label='restante'>$restante</td>";
                 echo "<td data-label='Actualizar'>";
                     echo "<form method='POST' action='pres_neg_dat_actualizar_repuestos_mecanico.php'>";
                     echo "<input type= 'hidden' name = 'id_repuesto' Value='$id_repuesto'>";

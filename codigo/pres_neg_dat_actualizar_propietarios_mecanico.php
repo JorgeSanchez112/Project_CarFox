@@ -30,12 +30,12 @@
 
             echo "<section class='container'>";
                 echo "<article class='article__icon-triangle'> </article>";
-                echo "<h2>EMPLEADOS</h2>";
+                echo "<h2>PROPIETARIOS</h2>";
                 echo "<article class='article__container-form'>";
                     echo "<form method='POST' action='neg_dat_actualizar_propietarios_mecanico.php'>";
                         echo "<input type='hidden' name='id_propietario' value='$id_propietario'>";
                         echo "<label for='documento'>Documento</label>";
-                        echo "<input type='number' id='documento' name='doc_propietario' placeholder='Ingresar documento' value='$doc_propietario' oninput='maxLengthCheck(this)' maxlength = '10'>";
+                        echo "<input type='hidden' id='documento' name='doc_propietario' placeholder='Ingresar documento' value='$doc_propietario' oninput='maxLengthCheck(this)' maxlength = '10'>";
                         echo "<label for='nombre'>Nombres</label>";
                         echo "<input type='text' id='nombre' name='nombres' placeholder='Ingresar descripcion de reparacion' value='$nombres' maxlength='25'>";
                         echo "<label for='apellido'>Apellidos</label>";

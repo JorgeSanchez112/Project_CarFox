@@ -6,7 +6,7 @@
         die('hay un error primera consulta!!! ['. $db->error.']');
     endif;
 
-    $sql1=("SELECT * FROM vehiculos");
+    $sql1=("SELECT * FROM vehiculos ORDER BY `id_vehiculo` DESC LIMIT 5");
     if(!$result1 = $db->query($sql1)):
         die('hay un error primera consulta!!! ['. $db->error.']');
     endif;
@@ -51,7 +51,7 @@
                     <input type="hidden" name="documento" placeholder="ingrese el documento" required>
                     <input type="hidden" name="fecha_salida" id="fecha_salida" required>
                     <label for="foto_vehiculo">Foto del vehiculo</label>
-                    <input type="file" name="file" id="foto_vehiculo" required>
+                    <input type="file" name="file[]" id="foto_vehiculo" multiple required>
                     <input class="input__btn-color" type="submit">
                 </form>
             </article>
