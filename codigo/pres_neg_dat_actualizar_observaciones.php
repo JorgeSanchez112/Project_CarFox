@@ -30,6 +30,7 @@
                 $fecha_entrada=stripslashes($row["fecha_entrada"]);
                 $fecha_salida=stripslashes($row["fecha_salida"]);
                 $imagenes=stripslashes($row["imagenes"]);
+                $nombre_img=stripslashes($row["nombre_img"]);
             endwhile;
 
             echo "<section class='container'>";
@@ -49,7 +50,7 @@
                         echo "<input type='datetime-local' name='fecha_entrada' id='fecha_entrada' value='$fecha_entrada' required>";
                         echo "<label for='fecha_salida'>Fecha de salida del vehiculo</label>";
                         echo "<input type='datetime-local' name='fecha_salida' id='fecha_salida' value='$fecha_salida' required>";
-                        echo "<a class='btn__actualizar-imagen' href='pres_neg_dat_actualizar_imagen.php?id_observaciones=$id_observaciones'>Actualizar imagen</a>";
+                        echo "<a class='btn__actualizar-imagen' href='pres_neg_dat_actualizar_imagen.php?id_observaciones=$id_observaciones&nombre=$nombre_img'>Actualizar imagen</a>";
                         echo "<input class='input__btn-color' type='submit'>";
                     echo "</form>";
                 echo "</article>";
@@ -58,8 +59,6 @@
     }
     $nuevo=new Observaciones();
     $nuevo -> actualizar($_POST["id_observaciones"]);
-
-        
     ?>
     </main>
 </body>

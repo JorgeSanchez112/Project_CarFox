@@ -28,29 +28,30 @@
             <article class="article__icon-triangle"> </article>
             <h2>OBSERVACIONES</h2>
             <article class="article__container-form">
-                <form method="POST" action="neg_dat_registro_observaciones_mecanico.php" enctype="multipart/form-data">
+                <form method="POST" action="neg_dat_registro_observaciones.php" enctype="multipart/form-data">
                     <label for="placa">Placa</label>
                     <select id="placa" name="placa" class="select__codrepuesto-form" placeholder="Ingresar placa del vehiculo" required>
                         <option value="">Seleccionar placa</option>
                     <?php while($row = $result1-> fetch_assoc()): ?>
                        <?=$placad = stripslashes($row["placa"]); ?>
+                       <?=$ddescripcion = stripslashes($row["descripcion"]);?>
                         <option value="<?=$placad?>"> <?=$placad?> </option>
                     <?php endwhile;  ?>
                     </select>
                     <label for="des_reparacion">Descripcion de reparacion</label>
-                    <input type="text" id="des_reparacion" name="descripcion_reparacion" placeholder="Ingresar descripcion de reparacion" required>
+                    <input type="text" id="des_reparacion" name="descripcion_reparacion" placeholder="Ingresar descripcion de reparacion" required size="10" minlength="1" maxlength="45">
                     <label for="cod_repuesto">Codigo de repuesto</label>
                     <select name="cod_repuesto" id="cod_repuesto" class="select__codrepuesto-form" required>
                         <option value="">Seleccionar repuesto</option>
                     <?php while($row = $result-> fetch_assoc()): ?>
-                       <?=$codigo_repuesto = stripslashes($row["cod_repuesto"]); ?>
+                       <?=$codigo_repuesto = stripslashes($row["cod_repuesto"]);?>
                         <option value="<?=$codigo_repuesto?>"> <?=$codigo_repuesto?> </option>
                     <?php endwhile;  ?>
                     </select>
                     <input type="hidden" name="documento" placeholder="ingrese el documento" required>
                     <input type="hidden" name="fecha_salida" id="fecha_salida" required>
                     <label for="foto_vehiculo">Foto del vehiculo</label>
-                    <input type="file" name="file" id="foto_vehiculo" required>
+                    <input type="file" name="file[]" id="foto_vehiculo" multiple required>
                     <input class="input__btn-color" type="submit">
                 </form>
             </article>

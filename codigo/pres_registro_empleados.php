@@ -16,11 +16,13 @@
             <article class="article__container-form">
                 <form method="POST" action="neg_dat_registro_empleados.php">
                     <label for="documento">Numero de documento</label>
+
                     <input type="number" id="documento" name="documento" placeholder="Ingresar numero de documento" oninput="maxLengthCheck(this)" maxlength = "10" required >
                     <label for="nombre" >Nombres</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Ingresar nombre" require size="10" minlength="1" maxlength="5"> required>
+
                     <label for="apellido">Apellidos</label>
-                    <input type="text" id="apellido" name="apellido" placeholder="Ingresar apellido" required>
+                    <input type="text" id="apellido" name="apellido" placeholder="Ingresar apellido" required size="10" minlength="1" maxlength="45">
                     <input class="input__btn-color" type="submit">
                 </form>
             </article>

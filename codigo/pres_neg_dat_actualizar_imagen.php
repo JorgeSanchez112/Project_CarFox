@@ -12,7 +12,7 @@
     <main>
     <?php
     class Observaciones{
-        public function actualizar_imagen($id_observaciones)
+        public function actualizar_imagen($id_observaciones,$nombre)
         {
             include("conexion.php");
 
@@ -30,9 +30,10 @@
             echo "<h2>OBSERVACIONES</h2>";
             echo "<article class='article__container-form'>";
                     echo "<form method='POST' action='neg_dat_actualizar_observaciones_imagen.php' enctype='multipart/form-data'>";
-                    echo"<input type='hidden' name='id_observaciones' value='$id_observaciones'>";
+                    echo "<input type='hidden' name='id_observaciones' value='$id_observaciones'>";
+                    echo "<input type='hidden' name='nombre' value='$nombre'";
                     echo "<label for='foto_vehiculo'>Foto del vehiculo</label>";
-                    echo "<input type='file' name='file' id='foto_vehiculo' required>";
+                    echo "<input type='file' name='file[]' id='foto_vehiculo' multiple required>";
                     echo "<input class='input__btn-color' type='submit'>";
                     echo "</form>";
                 echo "</article>";
@@ -42,7 +43,7 @@
         }
     }
     $nuevo=new Observaciones();
-    $nuevo-> actualizar_imagen("$_GET[id_observaciones]");
+    $nuevo-> actualizar_imagen($_GET["id_observaciones"],$_GET["nombre"]);
 
     ?>
         
