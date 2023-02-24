@@ -16,11 +16,11 @@
             <article class="article__container-form">
                 <form method="POST" action="neg_dat_registro_propietarios_mecanico.php">
                     <label for="documento">Documento del propietario</label>
-                    <input type="number" id="documento" name="documento" placeholder="Ingresar numero de documento" required>
+                    <input type="number" id="documento" name="documento" placeholder="Ingresar numero de documento" oninput="maxLengthCheck(this)" maxlength ="10">
                     <label for="nombre" >Nombres de propietario</label>
-                    <input type="text" id="nombre" name="nombres" placeholder="Ingresar nombre" required>
+                    <input type="text" id="nombre" name="nombres" placeholder="Ingresar nombre" required maxlength="45">
                     <label for="apellido">Apellidos de propietario</label>
-                    <input type="text" id="apellido" name="apellidos" placeholder="Ingresar apellido" required>
+                    <input type="text" id="apellido" name="apellidos" placeholder="Ingresar apellido" required maxlength="45">
                     <input class="input__btn-color" type="submit">
                 </form>
             </article>
@@ -28,3 +28,4 @@
     </main>
 </body>
 </html>
+<script src="js/maxLengthNumber.js"></script>

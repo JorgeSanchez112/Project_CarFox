@@ -25,18 +25,18 @@
             <article class="article__container-form">
                 <form method="POST" action="neg_dat_registro_vehiculo_mecanico.php">
                     <label for="placa">Placa del vehiculo</label>
-                    <input type="text" id="placa" name="placa" placeholder="Ingresar placa del vehiculo" required>
+                    <input type="text" id="placa" name="placa" placeholder="Ingresar placa del vehiculo" maxlength="6">
                     <label for="marca" >Marca del vehiculo</label>
-                    <input type="text" id="marca" name="marca" placeholder="Ingresar marca" required>
+                    <input type="text" id="marca" name="marca" placeholder="Ingresar marca"  maxlength="25">
                     <label for="modelo">Modelo del vehiculo</label>
-                    <input type="text" id="modelo" name="modelo" placeholder="Ingresar modelo" required>
+                    <input type="text" id="modelo" name="modelo" placeholder="Ingresar modelo" maxlength="35">
                     <label for="tipo">Tipo de vehiculo</label>
-                    <input type="text" id="tipo" name="tipo" placeholder="Ingresar tipo de vehiculo" required>
-                    <input type="hidden" name="mecanico" placeholder="ingrese el documento" required>
+                    <input type="text" id="tipo" name="tipo" placeholder="Ingresar tipo de vehiculo" maxlength="70">
+                    <input type="hidden" name="mecanico" placeholder="ingrese el documento" maxlength="15">
                     <label for="estado">Estado del vehiculo</label>
-                    <input type="text" id="estado" name="estado" placeholder="Ingresar estado del vehiculo" required>
+                    <input type="text" id="estado" name="estado" placeholder="Ingresar estado del vehiculo" maxlength="45">
                     <label for="descripcion">Descripcion de entrada del vehiculo</label>
-                    <input type="text" id="descripcion" name="descripcion" placeholder="Descripcion entrada vehiculo" required>
+                    <input type="text" id="descripcion" name="descripcion" placeholder="Descripcion entrada vehiculo" maxlength="80">
                     <label for="doc_propietario">Documento de propietario</label>
                     <select  id="doc_propietario" name="doc_propietario" class="select__codrepuesto-form" required>
                         <option value="">Seleccionar documento</option>

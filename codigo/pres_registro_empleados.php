@@ -19,10 +19,9 @@
 
                     <input type="number" id="documento" name="documento" placeholder="Ingresar numero de documento" oninput="maxLengthCheck(this)" maxlength = "10" required >
                     <label for="nombre" >Nombres</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ingresar nombre" require size="10" minlength="1" maxlength="5"> required>
-
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingresar nombre" maxlength="25"> required>
                     <label for="apellido">Apellidos</label>
-                    <input type="text" id="apellido" name="apellido" placeholder="Ingresar apellido" required size="10" minlength="1" maxlength="45">
+                    <input type="text" id="apellido" name="apellido" placeholder="Ingresar apellido" maxlength="25">
                     <input class="input__btn-color" type="submit">
                 </form>
             </article>
@@ -30,3 +29,4 @@
     </main>
 </body>
 </html>
+<script src="js/maxLengthNumber.js"></script>

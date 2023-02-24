@@ -39,7 +39,7 @@
                     <?php endwhile;  ?>
                     </select>
                     <label for="des_reparacion">Descripcion de reparacion</label>
-                    <input type="text" id="des_reparacion" name="descripcion_reparacion" placeholder="Ingresar descripcion de reparacion" required>
+                    <input type="text" id="des_reparacion" name="descripcion_reparacion" placeholder="Ingresar descripcion de reparacion" required  maxlength="70">
                     <label for="cod_repuesto">Codigo de repuesto</label>
                     <select name="cod_repuesto" id="cod_repuesto" class="select__codrepuesto-form" required>
                         <option value="">Seleccionar repuesto</option>
