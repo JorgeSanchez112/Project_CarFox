@@ -12,9 +12,6 @@ function Header()
     $this->Cell(10);
     // Título
     $this->Cell(170,10,'REPORTE REPARACION',0,0,'C');
-    // Salto de línea
-    $this->Ln(20);
-  
    
 }
 
@@ -31,9 +28,12 @@ function Footer()
 }
 }
 
-function Reporte($id_observaciones, $placa){
+function Reporte($id_observaciones, $placa, $imagenreporte){
 
 require 'conexion.php';
+
+$consulta3="SELECT * FROM imagen_reporte WHERE nombre ='$imagenreporte'";
+$resultado3 = $db->query($consulta3);
 
 $consulta1="SELECT * FROM vehiculos WHERE placa = '$placa'";
 $resultado1 = $db->query($consulta1);
@@ -51,7 +51,7 @@ while ($row1 = $resultado1->fetch_assoc()){
     $doc_propietario = ($row1['doc_propietario']);
 
     $pdf->SetFont('Arial','',14);
-
+    $pdf-> Ln(10);
     $pdf-> Write(10,'Nombre de propietario: ');
     
     $pdf->SetFont('Arial','',11);
@@ -107,15 +107,20 @@ while ($row = $resultado->fetch_assoc()){
     $pdf-> Ln(10);
     $pdf->SetFont('Arial','',14);
     $pdf-> Write(10,'IMAGENES: ');
-    $pdf-> Image('imagenes/'.$row['imagenes'],36,110,140,70);
-
+    $pdf-> Ln(180);
+    $pdf-> Image('imagenes/'.$row['imagenes'],16,120,180,140);
 }
+
+while ($row3 = $resultado3->fetch_assoc()){
+    $pdf-> Ln(20);
+    $pdf->Cell(40,20);
+    $pdf-> Ln(10);
+    $pdf->MultiCell(190,40, $pdf->Image('imagenes/'.$row3['urlimagen'], $pdf->GetX()+40, $pdf->GetY()+3, 100) ,0,"C");
+} 
 
 $pdf->Output();
 
 }
 
-
-
-Reporte($_POST['id_observaciones'],$_POST['placa']);
+Reporte($_POST['id_observaciones'],$_POST['placa'],$_POST['imagenreporte']);
 ?>

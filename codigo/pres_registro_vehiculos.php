@@ -32,8 +32,7 @@
                     <input type="text" id="modelo" name="modelo" placeholder="Ingresar modelo" required size="10" minlength="1" maxlength="35">
                     <label for="tipo">Tipo de vehiculo</label>
                     <input type="text" id="tipo" name="tipo" placeholder="Ingresar tipo de vehiculo" required size="10" minlength="1" maxlength="35">
-                    <label for="mecanico">Mecanico</label>
-                    <input type="number" id="mecanico" name="mecanico" placeholder="Ingresar doc mecanico" required min="1" max="15">
+                    <input type="hidden" id="mecanico" name="mecanico" placeholder="Ingresar doc mecanico">
                     <label for="estado">Estado del vehiculo</label>
                     <input type="text" id="estado" name="estado" placeholder="Ingresar estado del vehiculo" required size="10" minlength="1" maxlength="45">
                     <label for="descripcion">Descripcion de entrada del vehiculo</label>

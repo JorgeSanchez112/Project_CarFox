@@ -62,7 +62,14 @@ create table observaciones (
     fecha_entrada datetime not null,
     fecha_salida datetime not null,
     imagenes varchar(200) not null,
-    reporte boolean not null
+    reporte boolean not null,
+    nombre_img varchar (24) not null
+);
+
+create table imagen_reporte (
+    id_img_reporte int (20) primary key not null auto_increment,
+    nombre varchar (24) not null,
+    urlimagen varchar (200) not null
 );
 
 create table camb_contra(
@@ -136,11 +143,11 @@ values (NULL,"DTE312","Renauld","Cap","Carro",1067219831,"Mal estado","Fallas de
 (NULL,"DGD544","Chevrolet","Captiva","Carro",321456,"Mal estado","Falla de motor , por falta aceite ",6644);
 
 insert into observaciones
-values (NULL,"SQT290","Cambio de frenos","LLN-29",10412890,"2018-10-02 10:29:20","2020-12-09 10:30:01","Patojpg",1);
+values (NULL,"SQT290","Cambio de frenos","LLN-29",10412890,"2018-10-02 10:29:20","2020-12-09 10:30:01","Patojpg",1,"Llanta");
 
 insert into observaciones
-values (NULL,"DTE312","Al automovil se le realizo un cambio de bateria con herramientas mecanica","B-300",1067219831,"2019-03-11 10:29:20","2019-03-12 10:30:01","bateria.png",1),
-(NULL,"DGD544","Se inspecciono el motor y se visualizo falta de aceite el cual se cambio las partes afectadas","SDFSF",321456,"2022-02-02 10:29:20","2022-02-04 10:30:01","xxxzzz.png",1);
+values (NULL,"DTE312","Al automovil se le realizo un cambio de bateria con herramientas mecanica","B-300",1067219831,"2019-03-11 10:29:20","2019-03-12 10:30:01","bateria.png",1,"Rueda"),
+(NULL,"DGD544","Se inspecciono el motor y se visualizo falta de aceite el cual se cambio las partes afectadas","SDFSF",321456,"2022-02-02 10:29:20","2022-02-04 10:30:01","xxxzzz.png",1,"Motor");
 
 insert into repuestos
 values (NULL,"Llanta","Llanta para vehiculos honda","LLN-29",100,1);
@@ -148,6 +155,13 @@ values (NULL,"Llanta","Llanta para vehiculos honda","LLN-29",100,1);
 insert into repuestos
 values (NULL,"Bateria","Bateria para vehiculos pequeños","B-300",100,1),
 (NULL,"Motor","Modelo de motor XYZ","SDFSF",100,1);
+
+insert into imagen_reporte
+values (NULL,"Llanta","prueba.png");
+
+insert into imagen_reporte
+values (NULL,"Rueda","Prueba1.jpg"),
+(NULL,"Motor","Prueba2.jpg");
 
 insert into camb_contra
 values (NULL,"¿Cual fue el nombre de su primera mascota?","malcon",10412890);
