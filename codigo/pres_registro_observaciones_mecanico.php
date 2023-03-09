@@ -6,13 +6,12 @@
         die('hay un error primera consulta!!! ['. $db->error.']');
     endif;
 
-    $sql1=("SELECT * FROM vehiculos ORDER BY `id_vehiculo` DESC LIMIT 5");
+    $sql1=("SELECT * FROM entrada_vehiculo ORDER BY `id_entrada` DESC LIMIT 5;");
     if(!$result1 = $db->query($sql1)):
         die('hay un error primera consulta!!! ['. $db->error.']');
     endif;
     
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -34,18 +33,19 @@
                     <select id="placa" name="placa" class="select__codrepuesto-form" placeholder="Ingresar placa del vehiculo" required>
                         <option value="">Seleccionar placa</option>
                     <?php while($row = $result1-> fetch_assoc()): ?>
-                       <?=$placad = stripslashes($row["placa"]); ?>
-                        <option value="<?=$placad?> "> <?=$placad?> </option>
+                        <?=$id_entradad = stripslashes($row["id_entrada"]); ?>
+                        <?=$placad = stripslashes($row["fk_vehiculo"]); ?>
+                        <option value="<?=$id_entradad?>"> <?=$placad?> </option>
                     <?php endwhile;  ?>
                     </select>
                     <label for="des_reparacion">Descripcion de reparacion</label>
-                    <input type="text" id="des_reparacion" name="descripcion_reparacion" placeholder="Ingresar descripcion de reparacion" required  maxlength="70">
+                    <input type="text" id="des_reparacion" name="descripcion_reparacion" placeholder="Ingresar descripcion de reparacion"  maxlength="70">
                     <label for="cod_repuesto">Codigo de repuesto</label>
                     <select name="cod_repuesto" id="cod_repuesto" class="select__codrepuesto-form" required>
                         <option value="">Seleccionar repuesto</option>
                     <?php while($row = $result-> fetch_assoc()): ?>
-                       <?=$codigo_repuesto = stripslashes($row["cod_repuesto"]); ?>
-                        <option value="<?=$codigo_repuesto?> "> <?=$codigo_repuesto?> </option>
+                       <?=$codigo_repuesto = stripslashes($row["cod_repuesto"]);?>
+                        <option value="<?=$codigo_repuesto?>"> <?=$codigo_repuesto?> </option>
                     <?php endwhile;  ?>
                     </select>
                     <input type="hidden" name="documento" placeholder="ingrese el documento" required>

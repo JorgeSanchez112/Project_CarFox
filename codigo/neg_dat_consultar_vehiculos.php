@@ -31,8 +31,6 @@
                 echo "<th>Modelo</th>";
                 echo "<th>Tipo</th>";
                 echo "<th>Mecanico</th>";
-                echo "<th>Estado</th>";
-                echo "<th>Descripcion</th>";
                 echo "<th>Doc propietario</th>";
                 echo "<th>Actualizar</th>";
                 echo "<th>Eliminar</th>";
@@ -44,8 +42,6 @@
             $modelo=stripslashes($row["modelo"]);
             $tipo_de_vehiculo=stripslashes($row["tipo_de_vehiculo"]);
             $mecanico=stripslashes($row["mecanico"]);
-            $estado=stripslashes($row["estado"]);
-            $descripcion=stripslashes($row["descripcion"]);
             $doc_propietario=stripslashes($row["doc_propietario"]);
 
             echo "<tr>";
@@ -54,8 +50,6 @@
                 echo "<td data-label='Modelo'>$modelo</td>";
                 echo "<td data-label='Tipo'>$tipo_de_vehiculo</td>";
                 echo "<td data-label='Mecanico'>$mecanico</td>";
-                echo "<td data-label='Estado'>$estado</td>";
-                echo "<td data-label='Descripcion'>$descripcion</td>";
                 echo "<td data-label='Doc propietario'>$doc_propietario</td>";
                 echo "<td data-label='Actualizar'>";
                     echo "<form method='POST' action='pres_neg_dat_actualizar_vehiculos.php'>";

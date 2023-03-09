@@ -39,7 +39,7 @@ class Permisos
 
             while ($row=$result1->fetch_assoc()):
 
-                $documento=stripslashes($row["documento"]);
+                $documentod=stripslashes($row["documento"]);
                 $fk_id_rol=stripslashes($row["fk_id_rol"]);
                 $nuevo=stripslashes($row["nuevo"]);
 
@@ -50,7 +50,7 @@ class Permisos
                     $_SESSION['usuario_actual']=$documento;
                     header("location:pres_registro_camb_contrasena.php");
                 }else{
-                    if($documento == $documento && $fk_id_rol==1){
+                    if($documentod == $documento && $fk_id_rol==1){
 
                         $sql2 = "SELECT * FROM usuarios WHERE documento='$documento'";
                     
@@ -68,7 +68,7 @@ class Permisos
                         $_SESSION['nombre_usuario']=$nombre;
                         header("location:dashboard_administrador.php");
     
-                    }else if($documento == $documento && $fk_id_rol==2){
+                    }else if($documentod == $documento && $fk_id_rol==2){
     
                         $sql2 = "SELECT * FROM usuarios WHERE documento='$documento'";
                     

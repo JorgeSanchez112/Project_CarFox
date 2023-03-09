@@ -4,7 +4,7 @@ include('ventana_observaciones.php');
 class Observaciones
 {
 
-	public function registrar($placa,$cod_repuesto,$descripcion_reparacion,$usuario_actual,$fecha_salida)
+	public function registrar($placa, $descripcion_reparacion, $cod_repuesto, $usuario_actual,$fecha_salida)
 	{
 		include ('destinobitacoras.php');
 
@@ -37,7 +37,7 @@ class Observaciones
 			include('conexion.php');
 
 			if (move_uploaded_file($_FILES['file']['tmp_name'][0],$destino.'/'.$imagenfinal)){
-				mysqli_query($db,"INSERT INTO observaciones(id_observaciones, fk_placa, cod_repuesto,descripcion_reparacion, documento, fecha_entrada, fecha_salida, imagenes, reporte, nombre_img) VALUES (NULL,'$placa','$cod_repuesto', '$descripcion_reparacion','$usuario_actual','$fecha_entrada','$fecha_salida','$imagenfinal','$reporte','$nombreimg')");
+				mysqli_query($db,"INSERT INTO observaciones(id_observaciones, descripcion_reparacion, cod_repuesto, documento, fecha_salida, imagenes, reporte, fk_entrada, nombre_img) VALUES (NULL, '$descripcion_reparacion', '$cod_repuesto','$usuario_actual','$fecha_salida','$imagenfinal','$reporte', '$placa', '$nombreimg')");
 			}
 
 
@@ -63,11 +63,30 @@ class Observaciones
 				}
 			}
 
+
+			//registrar el uso de un repuesto en la tabla repuestos
+			$sql = "SELECT * FROM repuestos WHERE cod_repuesto = '$cod_repuesto'";
+			if(!$result = $db->query($sql)):
+				die('Hay un error segunda consulta!!! ['.$db->error.']');
+			endif;
+
+			while ($row=$result->fetch_assoc()):
+				$id_repuestod=stripslashes($row["id_repuesto"]);
+				$repuesto=stripslashes($row["repuesto"]);
+				$entrada=stripslashes($row["entrada"]);
+				$salida=stripslashes($row["salida"]);
+			endwhile;
+
+			$descuento = $salida + 1;
+
+			mysqli_query($db,"UPDATE repuestos SET salida='$descuento' WHERE id_repuesto='$id_repuestod'");
+			
+
 	}
 	
 }
 
 $nuevo=new Observaciones();
-$nuevo-> registrar($_POST["placa"],$_POST["cod_repuesto"],$_POST["descripcion_reparacion"],$_SESSION["usuario_actual"],$_POST["fecha_salida"]);
+$nuevo-> registrar($_POST["placa"], $_POST["descripcion_reparacion"], $_POST["cod_repuesto"], $_SESSION["usuario_actual"], $_POST["fecha_salida"]);
 
 ?>

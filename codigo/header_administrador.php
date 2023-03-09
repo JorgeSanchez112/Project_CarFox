@@ -34,6 +34,7 @@
                         <li><a href="neg_dat_consultar_empleados.php"><i class="fas fa-user"></i>Empleados</a></li>
                         <li><a href="neg_dat_consultar_propietarios.php"><i class="fa-solid fa-key"></i> Propietarios</a></li>
                         <li><a href="neg_dat_consultar_vehiculos.php"><i class="fa-solid fa-car"></i> Vehiculos</a></li>
+                        <li><a href="neg_dat_consultar_entrada_vehiculo.php"><i class="fa-solid fa-person-walking-arrow-right"></i> Check in</a></li>
                         <li><a href="neg_dat_consultar_observaciones.php"><i class="fa-solid fa-magnifying-glass-chart"></i> Observaciones</a></li>
                         <li><a href="neg_dat_consultar_repuestos.php"><i class="fa-solid fa-hammer"></i> Repuestos</a></li>
                         <li><a href="neg_salir.php "><i class="fa-solid fa-right-to-bracket"></i> Cerrar sesión</a></li>

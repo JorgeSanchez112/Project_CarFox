@@ -28,8 +28,6 @@
                 $modelo=stripslashes($row["modelo"]);
                 $tipo_de_vehiculo=stripslashes($row["tipo_de_vehiculo"]);
                 $mecanico=stripslashes($row["mecanico"]);
-                $estado=stripslashes($row["estado"]);
-                $descripcion=stripslashes($row["descripcion"]);
                 $doc_propietario=stripslashes($row["doc_propietario"]);
             endwhile;
 
@@ -49,10 +47,6 @@
                         echo "<input type='text' id='tipo' name='tipo' placeholder='Ingresar tipo de vehiculo' value='$tipo_de_vehiculo' maxlength='70'>";
                         echo "<label for='mecanico'>Mecanico</label>";
                         echo "<input type='number' id='mecanico' name='mecanico' placeholder='Ingresar doc mecanico' value='$mecanico' maxlength='10'>";
-                        echo "<label for='estado'>Estado del vehiculo</label>";
-                        echo "<input type='text' id='estado' name='estado' placeholder='Ingresar estado del vehiculo' value='$estado' maxlength='45'>";
-                        echo "<label for='descripcion'>Descripcion de entrada del vehiculo</label>";
-                        echo "<input type='text' id='descripcion' name='descripcion' placeholder='Descripcion entrada vehiculo' value='$descripcion' maxlength='80'>";
                         echo "<label for='doc_propietario'>Documento de propietario</label>";
                         echo "<input type='number' id='doc_propietario' name='doc_propietario' placeholder='Ingresar doc propietario' value='$doc_propietario' oninput='maxLengthCheck(this)' maxlength = '10'>";
                         echo "<input class='input__btn-color' type='submit'>";

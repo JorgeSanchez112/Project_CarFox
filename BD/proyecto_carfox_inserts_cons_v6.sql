@@ -31,19 +31,6 @@ create table repuestos (
     cod_repuesto varchar (7) not null,
     entrada int (2) not null,
     salida int (2) not null
-
-);
-
-create table vehiculos (
-    id_vehiculo int (20) primary key not null auto_increment,
-    placa varchar (6) not null,
-    marca text (25) not null,
-    modelo varchar (10) not null,
-    tipo_de_vehiculo text (10) not null,
-    mecanico int(12) not null,
-    estado  text (15) not null,
-    descripcion varchar (500) not null,
-    doc_propietario int (10) not null
 );
 
 create table propietarios (
@@ -53,16 +40,35 @@ create table propietarios (
     apellidos text (50) not null
 );
 
+create table vehiculos (
+    id_vehiculo int (20) primary key not null auto_increment,
+    placa varchar (6) not null,
+    marca text (25) not null,
+    modelo varchar (10) not null,
+    tipo_de_vehiculo text (10) not null,
+    mecanico int(12) not null,
+    doc_propietario int (10) not null
+);
+
+create table entrada_vehiculo (
+    id_entrada int (20) primary key not null auto_increment,
+    estado text (15) not null,
+    descripcion_entrada varchar (500)not null,
+    fecha_entrada datetime not null,
+    imagenes_entrada varchar(200) not null,
+    nombre_img_entrada varchar (24) not null,
+    fk_vehiculo varchar (6) not null
+);
+
 create table observaciones (
     id_observaciones int (20) primary key not null auto_increment,
-    fk_placa varchar (6) not null,
     descripcion_reparacion varchar (500) not null,
     cod_repuesto varchar (7) not null,
     documento int (12) not null,
-    fecha_entrada datetime not null,
     fecha_salida datetime not null,
     imagenes varchar(200) not null,
     reporte boolean not null,
+    fk_entrada int (20) not null,
     nombre_img varchar (24) not null
 );
 
@@ -79,6 +85,12 @@ create table camb_contra(
     fk_documento int (12) not null
 );
 
+alter table observaciones
+add foreign key (fk_entrada)
+references entrada_vehiculo(id_entrada) ON UPDATE CASCADE;
+
+/* AVANCE */
+
 alter table permisos
 add foreign key (documento)
 references usuarios (id_usuario);
@@ -90,14 +102,6 @@ references usuario_rol (id_rol);
 alter table vehiculos
 add foreign key (mecanico)
 references usuarios (id_usuario);
-
-alter table vehiculos
-add foreign key (doc_propietario)
-references propietarios(id_propietario);
-
-alter table observaciones
-add foreign key (fk_placa)
-references vehiculos(id_vehiculo);
 
 alter table observaciones
 add foreign key (cod_repuesto)
@@ -136,18 +140,25 @@ values (NULL,123456534,"Francisco","Estrada gomez"),
 (NULL,6644,"Leonardo"," Pineda");
 
 insert into vehiculos
-values (NULL,"SQT290","Honda","Cap","Carro",10412890,"Mal estado","Cambio de frenos",102839);
+values (NULL,"SQT290","Honda","Cap","Carro",10412890,102839);
 
 insert into vehiculos
-values (NULL,"DTE312","Renauld","Cap","Carro",1067219831,"Mal estado","Fallas de bateria",123456534),
-(NULL,"DGD544","Chevrolet","Captiva","Carro",321456,"Mal estado","Falla de motor , por falta aceite ",6644);
+values (NULL,"DTE312","Renauld","Cap","Carro",1067219831,123456534),
+(NULL,"DGD544","Chevrolet","Captiva","Carro",321456,6644);
+
+insert into entrada_vehiculo
+values (NULL,"Malo","Espejo retrovisor roto","2018-10-02 10:29:20","espejo.png","espejo","SQT290");
+
+insert into entrada_vehiculo
+values (NULL,"Mal estado","Fallas de bateria","2019-03-11 10:29:20","bateria.png","bateria","DTE312"),
+(NULL,"Mal estado","Falla de motor , por falta aceite ","2022-02-02 10:29:20","motor.png","motor","DGD544");
 
 insert into observaciones
-values (NULL,"SQT290","Cambio de frenos","LLN-29",10412890,"2018-10-02 10:29:20","2020-12-09 10:30:01","Patojpg",1,"Llanta");
+values (NULL,"Cambio de frenos","LLN-29",10412890,"2020-12-09 10:30:01","Patojpg",1,1,"Llanta");
 
 insert into observaciones
-values (NULL,"DTE312","Al automovil se le realizo un cambio de bateria con herramientas mecanica","B-300",1067219831,"2019-03-11 10:29:20","2019-03-12 10:30:01","bateria.png",1,"Rueda"),
-(NULL,"DGD544","Se inspecciono el motor y se visualizo falta de aceite el cual se cambio las partes afectadas","SDFSF",321456,"2022-02-02 10:29:20","2022-02-04 10:30:01","xxxzzz.png",1,"Motor");
+values (NULL,"Al automovil se le realizo un cambio de bateria con herramientas mecanica","B-300",1067219831,"2019-03-12 10:30:01","bateria.png",1,2,"Rueda"),
+(NULL,"Se inspecciono el motor y se visualizo falta de aceite el cual se cambio las partes afectadas","SDFSF",321456,"2022-02-04 10:30:01","xxxzzz.png",1,3,"Motor");
 
 insert into repuestos
 values (NULL,"Llanta","Llanta para vehiculos honda","LLN-29",100,1);
@@ -169,3 +180,10 @@ values (NULL,"¿Cual fue el nombre de su primera mascota?","malcon",10412890);
 insert into camb_contra
 values (NULL,"¿Cual es el apellido de su abuelo?","lopez",1067219831),
 (NULL,"¿Cual es su animal preferido?","mono",321456);
+
+
+
+
+/* consulta entrada vehiculo y observaciones*/
+
+SELECT fk_vehiculo, id_observaciones, descripcion_reparacion, cod_repuesto, documento, fecha_salida, imagenes, reporte, fk_entrada, nombre_img FROM entrada_vehiculo INNER JOIN observaciones ON id_entrada=fk_entrada;
