@@ -15,7 +15,7 @@
             <article class="article__container-form">
                 <form method="POST" action="neg_dat_evaluar_camb_contrasena.php">
                     <label for="documento">Digitar numero de documento</label>
-                    <input type="number" id="documento" name="documentoc" placeholder="Ingresar documento" required min="1" max="15">
+                    <input type="number" id="documento" name="documentoc" placeholder="Ingresar documento" oninput="maxLengthCheck(this)" maxlength = "10">
 
                     <label for="pregunta">Seleccionar pregunta que se eligio</label>
                     <select name="pregunta" id="pregunta" class="select__cambcontra-form">
@@ -36,3 +36,4 @@
     
 </body>
 </html>
+<script src="js/maxLengthNumber.js"></script>

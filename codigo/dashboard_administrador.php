@@ -79,7 +79,7 @@
                     </picture>                    
                 </figure>
                 <div>
-                    <p>Observacion</p>
+                    <p>Entrada de vehiculo</p>
                     <a href="pres_registro_entrada_vehiculo.php">Registrar entrada vehiculo</a>
                 </div>
             </article>

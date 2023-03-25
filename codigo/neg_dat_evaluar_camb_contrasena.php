@@ -24,10 +24,8 @@ class Camb_contra
 
     endwhile;
 
-    echo $cont ;
-
     if ($cont=="0"):
-        /* header("location:index.php"); */
+        header("location:index.php");
         $_SESSION['logueado']="0";
     endif;
 
