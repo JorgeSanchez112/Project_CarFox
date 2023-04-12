@@ -8,7 +8,7 @@ class Entrada_vehiculo//inicio clase
 {
 	include("conexion.php");
 
-	mysqli_query($db,"UPDATE entrada_vehiculo SET estado='$estado', descripcion_entrada='$descripcion_entrada', fecha_entrada='$fecha_entrada' WHERE id_entrada='$id_entrada'");
+	mysqli_query($db,"UPDATE entrada_vehiculo SET estado='$estado', descripcion_entrada='$descripcion_entrada', fecha_entrada='$fecha_entrada', fk_vehiculo='$placa' WHERE id_entrada='$id_entrada'");
 		
 }
 }

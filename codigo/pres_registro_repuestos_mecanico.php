@@ -16,7 +16,7 @@
             <article class="article__container-form">
                 <form method="POST" action="neg_dat_registro_repuestos_mecanico.php">
                     <label for="repuesto">Nombre del repuesto</label>
-                    <input type="text" id="repuesto" name="repuesto" placeholder="Ingresar nombre de repuesto" required maxlength="45">
+                    <input type="text" id="repuesto" name="repuesto" placeholder="Ingresar nombre de repuesto" required maxlength="30">
                     <label for="des_repuesto" >Descripcion del repuesto</label>
                     <input type="text" id="des_repuesto" name="descripcion" placeholder="Descripcion repuesto" required maxlength="80">
                     <label for="cod_repuesto">Codigo del repuesto</label>

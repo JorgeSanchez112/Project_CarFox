@@ -16,7 +16,7 @@
             </article>
             <article class="article__buttons-size">
                 <a class="box1" href="pres_registro_entrada_vehiculo.php">Realizar registro</a>
-                <a class="box2" href="neg_dat_consultar_entrada_vehiculo.php">Consultar registros</a>
+                <a class="box2" href="neg_dat_consultar_entrada_vehiculo.php">Consultar check in</a>
             </article>
         </section>
     </main>

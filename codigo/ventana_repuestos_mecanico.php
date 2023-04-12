@@ -16,7 +16,7 @@
             </article>
             <article class="article__buttons-size">
                 <a class="box1" href="pres_registro_repuestos_mecanico.php">Realizar otro Registro</a>
-                <a class="box2" href="neg_dat_consultar_repuestos_mecanico.php">Consultar observaciones</a>
+                <a class="box2" href="neg_dat_consultar_repuestos_mecanico.php">Consultar repuestos</a>
             </article>
         </section>
     </main>

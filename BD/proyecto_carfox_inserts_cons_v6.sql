@@ -26,8 +26,8 @@ create table permisos (
 
 create table repuestos (
     id_repuesto int (20) primary key not null auto_increment,
-    repuesto varchar (20)  not null,
-    descripcion varchar (50) not null,
+    repuesto varchar (30)  not null,
+    descripcion varchar (80) not null,
     cod_repuesto varchar (7) not null,
     entrada int (2) not null,
     salida int (2) not null

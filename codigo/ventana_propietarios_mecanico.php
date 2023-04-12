@@ -16,7 +16,7 @@
             </article>
             <article class="article__buttons-size">
                 <a class="box1" href="pres_registro_propietarios_mecanico.php">Realizar otro Registro</a>
-                <a class="box2" href="neg_dat_consultar_propietarios_mecanico.php">Consultar observaciones</a>
+                <a class="box2" href="neg_dat_consultar_propietarios_mecanico.php">Consultar propietarios</a>
             </article>
         </section>
     </main>

@@ -16,7 +16,7 @@
             </article>
             <article class="article__buttons-size">
                 <a class="box1" href="pres_registro_empleados.php">Realizar otro Registro</a>
-                <a class="box2" href="neg_dat_consultar_empleados.php">Consultar observaciones</a>
+                <a class="box2" href="neg_dat_consultar_empleados.php">Consultar empleados</a>
             </article>
         </section>
     </main>

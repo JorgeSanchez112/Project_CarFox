@@ -70,7 +70,7 @@
     $nuevo -> consultar();
         
     ?>      
-        <a class="btn_bottom" href="pres_registro_vehiculos.php">Nuevo vehiculo</a>
+        <a class="btn_bottom" href="pres_registro_vehiculos_mecanico.php">Nuevo vehiculo</a>
     </main>
 </body>
 </html>

@@ -33,10 +33,6 @@
                     <label for="tipo">Tipo de vehiculo</label>
                     <input type="text" id="tipo" name="tipo" placeholder="Ingresar tipo de vehiculo" maxlength="70">
                     <input type="hidden" name="mecanico" placeholder="ingrese el documento" maxlength="15">
-                    <label for="estado">Estado del vehiculo</label>
-                    <input type="text" id="estado" name="estado" placeholder="Ingresar estado del vehiculo" maxlength="45">
-                    <label for="descripcion">Descripcion de entrada del vehiculo</label>
-                    <input type="text" id="descripcion" name="descripcion" placeholder="Descripcion entrada vehiculo" maxlength="80">
                     <label for="doc_propietario">Documento de propietario</label>
                     <select  id="doc_propietario" name="doc_propietario" class="select__codrepuesto-form" required>
                         <option value="">Seleccionar documento</option>
