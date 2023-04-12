@@ -40,7 +40,7 @@
                         echo "<label for='placa'>Placa</label>";
                         echo "<input type='text' id='placa' name='placa' placeholder='Ingresar placa del vehiculo' value='$placad' maxlength='6'>";
                         echo "<label for='estado'>Estado</label>";
-                        echo "<input type='text' id='estado' name='estado' placeholder='Ingresar estado del vehiculo' value='$estadod' maxlength='6'>";
+                        echo "<input type='text' id='estado' name='estado' placeholder='Ingresar estado del vehiculo' value='$estadod' maxlength='15'>";
                         echo "<label for='des_entrada'>Descripcion de entrada</label>";
                         echo "<input type='text' id='des_entrada' name='descripcion_entrada' placeholder='Ingresar descripcion de entrada' value='$descripcion_entradad' maxlength='70'>";
                         echo "<input type='hidden' name='fecha_entrada' id='fecha_entrada' value='$fecha_entradad' required>";
